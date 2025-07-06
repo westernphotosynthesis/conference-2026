@@ -9,4 +9,4 @@ More information coming soon!
 
 ---
 
-Stay tuned for registration, program updates, and location details.
+Stay tuned for registration, program updates, and location details!
