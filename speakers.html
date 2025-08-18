@@ -5,15 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speakers - Western Photosynthesis Conference 2026</title>
-    <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        .page-header {
-            background: linear-gradient(90deg, #007acc, #00996e);
-            padding: 2rem 1rem;
-            color: white;
-            margin-top: 0;
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #24292e;
         }
 
+        /* Navbar */
         .nav ul {
             list-style: none;
             padding: 1rem 0 0.5rem 0;
@@ -28,9 +39,9 @@
         }
 
         .nav ul li a {
-            color: white;
+            color: #fff;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
             padding: 0.5rem 0;
             display: block;
         }
@@ -41,46 +52,109 @@
 
         footer {
             margin-top: 4rem;
+            padding: 1rem 0;
             text-align: center;
             font-size: 0.9rem;
             color: #777;
         }
 
-        .main-content {
-            padding: 1rem;
+        /* Header */
+        .page-header {
+            background: linear-gradient(90deg, #007acc, #00996e);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            padding: 2rem 1rem 6rem 1rem;
             text-align: center;
+            color: white;
         }
-        
-        .speaker-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            justify-items: center;
-            margin-top: 2rem;
-            }
 
-        .placeholder {
-            width: 200px;
-            height: 200px;
-            background-color: #007acc;
-            border-radius: 8px;
-            opacity: 0.6;
-            }
+        .page-header h1 {
+            font-size: 3.25rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Main content */
+        .main-content {
+            margin: 2rem 5rem;
+        }
+
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Speakers section */
+        .speakers-container {
+            max-width: 900px; 
+            margin: 0 auto;
+        }
 
         .speaker-card {
-            text-align: center;
-            }
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
 
-        .label {
-            margin-top: 0.5rem;
+        .speaker-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .speaker-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+            color: #007acc;
+        }
+
+        .speaker-info h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #35383d;
+        }
+
+        .speaker-info p {
+            margin: 0;
             font-size: 1rem;
-            color: #444;
+            color: #555;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 1rem;
             }
 
+            .speaker-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .speaker-card img {
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="nav">
         <ul>
@@ -89,64 +163,77 @@
             <li><a href="speakers.html">Speakers</a></li>
             <li><a href="registration.html">Registration</a></li>
             <li><a href="venue.html">Venue</a></li>
-            <li><a href="conduct.html">Code of Conduct</a></li> 
+            <li><a href="conduct.html">Code of Conduct</a></li>
         </ul>
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <h1 class="project-name">Western Photosynthesis Conference 2026</h1>
-        <h2 class="project-tagline">January 8-11, 2026 • Los Gatos, CA</h2>
-    </section>
+    <header class="page-header">
+        <h1>Western Photosynthesis Conference 2026</h1>
+        <p>January 8-11, 2026 • Los Gatos, CA</p>
+    </header>
 
-    <!-- Content -->
-    <section class="main-content">
-        <h2>Invited Speakers</h2>
-        <div class="speaker-grid">
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-            <div class="speaker-card">
-                <div class="placeholder"></div>
-                <p class="label">TBA</p>
-            </div>
-        </div>          
-          
-    </section>
+<!-- Main Content -->
+<main class="main-content">
+    <h2>Invited Speakers</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy;WPC 2026</p>
-    </footer>
+    <div class="speakers-container">
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Graham Fleming">
+            <div class="speaker-info">
+                <h3>Keynote I: Graham R. Fleming, PhD</h3>
+                <h4>Distinguished Emeritus Professor of Chemistry, University of California, Berkeley</h4>
+                <h4>Senior Faculty Scientist, Lawrence Berkeley National Laboratory</h4>
+                <h4>Kavli Energy NanoScience Institute</h4>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Alice Barkan">
+            <div class="speaker-info">
+                <h3>Keynote II: Alice Barkan, PhD</h3>
+                <h4>Professor Emerita, University of Oregon</h4>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Graham Peers">
+            <div class="speaker-info">
+                <h3 style="color: #00996e">Graham Peers, PhD</h3>
+                <h4>Professor, Colorado State University</h4>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Jesse Woodson">
+            <div class="speaker-info">
+                <h3 style="color: #00996e">Jesse Woodson, PhD</h3>
+                <h4>Associate Professor, University of Arizona</h4>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Anagha Krishnan">
+            <div class="speaker-info">
+                <h3 style="color: #00996e">Anagha Krishnan, PhD</h3>
+                <h4>Staff Research Scientist, National Renewable Energy Laboratory</h4>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <img src="images/blue.png" alt="Dr. Sunnyjoy Dupuis">
+            <div class="speaker-info">
+                <h3 style="color: #00996e">Sunnyjoy Dupuis, PhD</h3>
+                <h4>Postdoctoral Scholar, University of California, Berkeley</h4>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    &copy; Western Photosynthesis Conference 2026
+</footer>
+
 </body>
 
 </html>

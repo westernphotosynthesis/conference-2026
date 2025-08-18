@@ -5,15 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venue - Western Photosynthesis Conference 2026</title>
-    <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        .page-header {
-            background: linear-gradient(90deg, #007acc, #00996e);
-            padding: 2rem 1rem;
-            color: white;
-            margin-top: 0;
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #24292e;
         }
 
+        /* Navbar */
         .nav ul {
             list-style: none;
             padding: 1rem 0 0.5rem 0;
@@ -28,9 +39,9 @@
         }
 
         .nav ul li a {
-            color: white;
+            color: #fff;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
             padding: 0.5rem 0;
             display: block;
         }
@@ -41,19 +52,49 @@
 
         footer {
             margin-top: 4rem;
+            padding: 1rem 0;
             text-align: center;
             font-size: 0.9rem;
             color: #777;
         }
 
-        .main-content {
-            padding: 1rem;
+        .main-content h2 {
             text-align: center;
+            margin-top: 1;
+            margin-bottom: 0;
+            font-size: 1.75rem;
+        }
+
+        /* Header */
+        .page-header {
+            background: linear-gradient(90deg, #007acc, #00996e);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            padding: 2rem 1rem 6rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 3.25rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 
 <body>
+
     <!-- Navbar -->
     <nav class="nav">
         <ul>
@@ -67,26 +108,16 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <h1 class="project-name">Western Photosynthesis Conference 2026</h1>
-        <h2 class="project-tagline">January 8-11, 2026 • Los Gatos, CA</h2>
-    </section>
+    <header class="page-header">
+        <h1>Western Photosynthesis Conference 2026</h1>
+        <p>January 8-11, 2026 • Los Gatos, CA</p>
+    </header>
 
-    <!-- Content -->
-    <section class="main-content">
+    <!-- Main content will go here -->
+    <main class="main-content">
         <h2>Venue and Travel Information</h2>
-        <p>Coming soon!</p>
-        <h3>Green Mountain Retreat</h3>
-        <p>19480 Bear Creek Rd, Los Gatos, CA 95033</p>
-        <a href="https://www.greenmountainretreat.com/">Green Mountain Retreat Website</a>
-        <h3>Getting to the Venue</h3>
-        <p>Green Mountain Retreat is located in Los Gatos, just a 25-minute drive from the San Jose Airport.</p>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy;WPC 2026</p>
-    </footer>
 </body>
 
 </html>

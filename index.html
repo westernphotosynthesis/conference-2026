@@ -5,34 +5,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Western Photosynthesis Conference 2026</title>
-    <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            padding: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #24292e;
         }
-
+       
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
-            padding: 2rem 1rem;
-            margin-top: 0;
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0,1) 80%,   /* fully visible for top 70% */
+                rgba(0,0,0,0) 30%  /* fade out bottom 30% */
+            );
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0,1) 20%,
+                rgba(0,0,0,0) 100%
+            );
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            padding: 2rem 1rem 6rem 1rem; /* extra bottom space for fade */
+            text-align: center;
             color: white;
         }
 
-        .main-content h1 {
+        .page-header h1 {
+            font-size: 3.25rem;
+            margin-bottom: 0.5rem;
+            margin-top: 0rem;
+            font-weight: 700; 
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            margin-top: 0;
+            color: rgba(255, 255, 255, 0.7); /* white at 70% opacity */
+        }
+
+        .main-content {
+            margin-top: 0.5rem;
+            margin-right: 5rem;
+            margin-bottom: 0.5rem;
+            margin-left: 5rem;
+            padding: 0.5rem;
+        }
+
+
+        .main-content h1,
+        .main-content h2 {
+            text-align: center;
             margin-top: 0;
         }
 
-        footer {
-            margin-top: 4rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #777;
+        .main-content p {
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1.08rem;
+            color: #35383D;
         }
 
-        h2 {
-            text-align: center;
+        .main-content p.spaced {
+            margin-top: 2rem; /* increases space above this paragraph */
         }
+
 
         .nav ul {
             list-style: none;
@@ -48,9 +91,9 @@
         }
 
         .nav ul li a {
-            color: white;
+            color: #fff;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
             padding: 0.5rem 0;
             display: block;
         }
@@ -58,8 +101,62 @@
         .nav ul li a:hover {
             text-decoration: underline;
         }
+
+        .text-image-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .text-section {
+            flex: 4;
+            margin: 0;
+        }
+
+        .image-section {
+            flex: 3;
+            text-align: center;
+            height: 400px;       /* desired height */
+        }
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    
+            border-radius: 6px;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 1rem 0; 
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .text-image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-section {
+                margin-top: 1rem;
+            }
+        }
+
+        .email {
+            color: #00996e;
+            text-decoration: none;
+        }
+
+        .email:hover {
+            text-decoration: underline; /* optional: underline on hover */
+        }
+
     </style>
 </head>
+
 
 <body>
     <nav class="nav">
@@ -73,33 +170,40 @@
         </ul>
     </nav>
 
-    <section class="page-header">
-        <h1 class="project-name">Western Photosynthesis Conference 2026</h1>
-        <h2 class="project-tagline">January 8-11, 2026 • Los Gatos, CA</h2>
-    </section>
+    <header class="page-header">
+        <h1>Western Photosynthesis Conference 2026</h1>
+        <p>January 8-11, 2026 • Los Gatos, CA</p>
+    </header>
 
-    <section class="main-content" style="text-align:center;">
-        <p>The Western Photosynthesis Conference (WPC) is pleased to announce its 35th annual meeting, bringing together
-        researchers from diverse disciplines to advance our understanding of photosynthetic processes. As one of three regional
-        photosynthesis conferences in the United States, the WPC provides a unique platform for scientists to share knowledge,
-        collaborate, and foster professional growth, particularly for early-career scholars.</p>
-
-        <p>This year's conference, themed <strong>"Harnessing the Power of Photosynthesis: From Fundamentals to Applications,"</strong> will explore cutting-edge research in areas such as mechanisms of light stress adaptation, structural dynamics and functional
-        implications, advances in cellular and molecular mechanisms, and innovations in photosynthetic technology and
-        applications. Additionally, topics will include integrative approaches at the ecosystem and global levels, insights into
-        evolution and diversity, carbon metabolism and photorespiration, and photosynthetic electron transport pathways. The
-        conference will be held at the Green Mountain Retreat, located in Los Gatos, CA, just a 25-minute drive from the San
-        Jose Airport, providing a convenient and scenic setting for attendees to engage in meaningful scientific discussions and
-        networking opportunities. By bringing together researchers from across the Western United States and beyond, the WPC
-        aims to drive innovation, advance fundamental knowledge, and inspire the next generation of scientists in the field of
-        photosynthesis.</p>
-
+    <section class="main-content">
+        <div class="text-image-container">
+            <div class="text-section">
+                <p>The Western Photosynthesis Conference (WPC) is pleased to announce its 35th annual meeting, bringing together
+                    researchers from diverse disciplines to advance our understanding of photosynthetic processes. As one of three
+                    regional photosynthesis conferences in the United States, the WPC provides a unique platform for scientists to share
+                    knowledge, collaborate, and foster professional growth, particularly for early-career scholars.</p>
+                
+                <p class="spaced">This year's conference, themed <strong style="color: #007acc;">"Harnessing the Power of Photosynthesis: From Fundamentals to
+                        Applications,"</strong> will explore cutting-edge research in areas such as mechanisms of light stress
+                    adaptation, structural dynamics and functional implications, advances in cellular and molecular mechanisms, and
+                    innovations in photosynthetic technology and applications. Additionally, topics will include integrative approaches
+                    at the ecosystem and global levels, insights into evolution and diversity, carbon metabolism and photorespiration,
+                    and photosynthetic electron transport pathways. The conference will be held at the Green Mountain Retreat, located
+                    in Los Gatos, CA, just a 25-minute drive from the San Jose Airport. By bringing together researchers from across the
+                    Western United States and beyond, the WPC aims to foster meaningful scientific discussion and inspire innovative
+                    research within the diverse field of photosynthesis. </p>
+            </div>
+            <div class="image-section">
+                <img src="images/homepage-nature.jpg" alt="Conference image">
+            </div>
+        </div>
         <h2>Contact</h2>
-        <p style="text-align:center;">Questions? Reach out to <strong>westernphotosynthesis@gmail.com.</strong></p>
-        <footer>
-            <p>&copy;WPC 2026 | Last updated 2025-07-07</p>
-        </footer>
+        <p style="text-align: center;">Reach out to <a href="mailto:westernphotosynthesis@gmail.com" class="email">westernphotosynthesis@gmail.com</a> with any questions or requests for additional information.</p>
     </section>
+
+    <footer>
+        &copy; Western Photosynthesis Conference 2026
+    </footer>
 </body>
 
 </html>

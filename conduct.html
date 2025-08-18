@@ -5,15 +5,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code of Conduct - Western Photosynthesis Conference 2026</title>
-    <link rel="stylesheet" href="https://pages-themes.github.io/cayman/assets/css/style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
-        .page-header {
-            background: linear-gradient(90deg, #007acc, #00996e);
-            padding: 2rem 1rem;
-            color: white;
-            margin-top: 0;
+        /* Base Styles */
+        body {
+            margin: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #24292e;
         }
 
+        /* Navbar */
         .nav ul {
             list-style: none;
             padding: 1rem 0 0.5rem 0;
@@ -28,9 +39,9 @@
         }
 
         .nav ul li a {
-            color: white;
+            color: #fff;
+            font-weight: 700;
             text-decoration: none;
-            font-weight: bold;
             padding: 0.5rem 0;
             display: block;
         }
@@ -39,30 +50,86 @@
             text-decoration: underline;
         }
 
+        .main-content h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
         footer {
             margin-top: 4rem;
+            padding: 1rem 0;
             text-align: center;
             font-size: 0.9rem;
             color: #777;
         }
 
-        .main-content {
-            padding: 1rem;
+        /* Header */
+        .page-header {
+            background: linear-gradient(90deg, #007acc, #00996e);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            padding: 2rem 1rem 6rem 1rem;
             text-align: center;
+            color: white;
         }
 
-        .no-bullet-list {
+        .page-header h1 {
+            font-size: 3.25rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+       .conduct-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            color: #24292e;
+        }
+
+        .conduct-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .conduct-section h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: #007acc;
+        }
+
+        .conduct-section ul {
+            margin: 0.5rem 0 1.5rem 1.5rem;
+            padding: 0;
+        }
+
+        .conduct-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .conduct-section .inline-list {
             list-style: none;
             padding: 0;
-            margin-left: 0;
-            text-align: center;
+            margin: 2rem auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
         }
-
-.no-bullet-list li {
-  margin-bottom: 0.3rem; /* Optional: adjust spacing */
-}
-
-
+        .conduct-section .inline-list li {
+            white-space: nowrap;
+        }
     </style>
 </head>
 
@@ -80,19 +147,25 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <h1 class="project-name">Western Photosynthesis Conference 2026</h1>
-        <h2 class="project-tagline">January 8-11, 2026 • Los Gatos, CA</h2>
-    </section>
+    <header class="page-header">
+        <h1>Western Photosynthesis Conference 2026</h1>
+        <p>January 8-11, 2026 • Los Gatos, CA</p>
+    </header>
 
-    <!-- Content -->
-    <section class="main-content">
+    <main class="main-content">
+    <div class="conduct-section">
         <h2>Code of Conduct</h2>
-        <p>The 35th Western Photosynthesis Conference (WPC2026), North American Photosynthesis Conference Association (NAPCA), and
-        the International Society of Photosynthetic Research (ISPR) are committed to fostering a diverse and inclusive
-        environment. We believe that all event participants deserve to be treated with respect, dignity, and kindness. The
-        WPC2026 organizers will not tolerate any form of discrimination, including but not limited to:</p>
-        <ul class="no-bullet-list">
+
+        <p>
+            The 35th Western Photosynthesis Conference (WPC2026), North American Photosynthesis Conference Association
+            (NAPCA), and
+            the International Society of Photosynthetic Research (ISPR) are committed to fostering a diverse and inclusive
+            environment. We believe that all event participants deserve to be treated with respect, dignity, and kindness.
+        </p>
+
+        <h3>Protected Categories</h3>
+        <p>The WPC2026 organizers will not tolerate any form of discrimination, including but not limited to:</p>
+        <ul class="inline-list">
             <li>Age</li>
             <li>Cultural background</li>
             <li>Ethnicity</li>
@@ -105,17 +178,76 @@
             <li>Religion</li>
             <li>Sexual orientation</li>
             <li>Socio-economic circumstance</li>
-          </ul>          
-        <p>We are committed to promoting a culture of equity, diversity, and inclusivity. We will work to identify and address
-        barriers to participation and ensure that all members can engage fully. If you witness or experience any behavior that
-        violates this code of conduct, please report it to the WPC2026 organizers. Additional information on our code of conduct
-        can be found on our website.</p>
-    </section>
+        </ul>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy;WPC 2026</p>
-    </footer>
+        <h3>Expectations</h3>
+        <ul>
+            <li>Treat everyone with respect, dignity, and equity</li>
+            <li>Uphold the highest standards of scientific integrity and professional behavior</li>
+            <li>Respect the rules, property, and policies of the event venue</li>
+            <li>Adhere to federal and local laws during the WPC2026 Conference, field trips, and other events</li>
+        </ul>
+
+        <h3>Unacceptable Behavior</h3>
+        <ul>
+            <li>Harassment or discrimination in any form (see definitions below)</li>
+            <li>Physical or verbal abuse</li>
+            <li>Personal attacks directed toward others</li>
+            <li>Disruption of oral or poster sessions, including demeaning or hostile questioning</li>
+            <li>Presentations that promote illegal behavior, scientific misconduct, or offensive/discriminatory subject
+                matter</li>
+        </ul>
+
+        <h3>Definitions</h3>
+        <p><strong>Harassment</strong> is improper conduct by an individual that is offensive to others and that the
+            individual knew, or ought reasonably to have known, would cause offense or harm. It may be based on race,
+            national or ethnic origin, color, language, religion, age, sex, sexual orientation, gender identity or
+            expression, marital status, family status, disability, or pardoned conviction. It includes objectionable acts,
+            comments, or displays that demean or humiliate, as well as intimidation or threats. Persistent behavior is
+            typical, but even a single severe incident may constitute harassment.</p>
+
+        <p><strong>Discrimination</strong> is treating people differently, negatively, or adversely based on any of the
+            protected categories above.</p>
+
+        <h3>Reporting</h3>
+        <p>
+            If an individual experiences or witnesses unacceptable behavior, they should inform one of the host organizers
+            in person, by email, or by phone (provided they feel safe and comfortable doing so):
+        </p>
+        <ul>
+            <li>1 – <a href="mailto:email">email</a></li>
+            <li>2 – <a href="mailto:email">email</a></li>
+            <li>3 – <a href="mailto:email">email</a></li>
+        </ul>
+
+        <h3>Procedures</h3>
+        <ul>
+            <li>Document the details of an incident as soon as possible, especially if immediate reporting is not possible.
+            </li>
+            <li>Anyone witnessing a dangerous situation, someone in distress, or any other immediate threat should report to
+                event security or local police, and then notify a host organizer.</li>
+            <li>All complaints will be treated seriously and responded to promptly. Confidentiality will be maintained
+                whenever possible within the limits of the law.</li>
+        </ul>
+
+        <h3>Enforcement and Compliance</h3>
+        <p>The WPC2026 Conference is responsible for upholding this code of conduct and may take any action deemed
+            necessary, including:</p>
+        <ul>
+            <li>Requesting that an individual cease unacceptable behavior</li>
+            <li>Removing an individual from an event without refund</li>
+            <li>Prohibiting future participation in NAPCA/ISPR conferences or events</li>
+            <li>Contacting law enforcement if necessary</li>
+        </ul>
+        <p>Anyone asked to stop unacceptable behavior is expected to comply immediately.</p>
+</div>
+
+</main>
+
+<footer>
+    &copy; Western Photosynthesis Conference 2026
+</footer>
+
 </body>
 
 </html>
