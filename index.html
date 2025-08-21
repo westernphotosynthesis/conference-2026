@@ -63,7 +63,7 @@
         .main-content h1,
         .main-content h2 {
             text-align: center;
-            margin-top: 0;
+            margin-top: 4rem;
         }
 
         .main-content p {
@@ -117,14 +117,38 @@
         .image-section {
             flex: 3;
             text-align: center;
-            height: 400px;       /* desired height */
+            height: 450px;       /* desired height */
         }
         .image-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;    
-            border-radius: 6px;
+            border-radius: 2px;
         }
+
+        .organizers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .organizer {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .organizer h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: #007acc;
+        }
+
+        .organizer p {
+            margin: 0.25rem 0;
+        }
+
 
         footer {
             margin-top: 4rem;
@@ -188,7 +212,8 @@
                     adaptation, structural dynamics and functional implications, advances in cellular and molecular mechanisms, and
                     innovations in photosynthetic technology and applications. Additionally, topics will include integrative approaches
                     at the ecosystem and global levels, insights into evolution and diversity, carbon metabolism and photorespiration,
-                    and photosynthetic electron transport pathways. The conference will be held at the Green Mountain Retreat, located
+                    and photosynthetic electron transport pathways. </p>
+                    <p>The conference will be held at <a style="color: #00996e;" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, located
                     in Los Gatos, CA, just a 25-minute drive from the San Jose Airport. By bringing together researchers from across the
                     Western United States and beyond, the WPC aims to foster meaningful scientific discussion and inspire innovative
                     research within the diverse field of photosynthesis. </p>
@@ -197,8 +222,28 @@
                 <img src="images/homepage-nature.jpg" alt="Conference image">
             </div>
         </div>
-        <h2>Contact</h2>
-        <p style="text-align: center;">Reach out to <a href="mailto:westernphotosynthesis@gmail.com" class="email">westernphotosynthesis@gmail.com</a> with any questions or requests for additional information.</p>
+        
+        <h2>Organizing Committee</h2>
+        <div class="organizers">
+            <div class="organizer">
+                <h3>Masakazu Iwai</h3>
+                <p>Lawrence Berkeley National Laboratory</p>
+                <p><a style="color: #00996e;" href="mailto:miwai@lbl.gov">miwai@lbl.gov</a></p>
+            </div>
+        
+            <div class="organizer">
+                <h3>Jan Kern</h3>
+                <p>Lawrence Berkeley National Laboratory</p>
+                <p><a style="color: #00996e;" href="mailto:jfkern@lbl.gov">jfkern@lbl.gov</a></p>
+            </div>
+        
+            <div class="organizer">
+                <h3>María Maldonado</h3>
+                <p>University of California, Davis</p>
+                <p><a style="color: #00996e;" href="mailto:mmaldo@ucdavis.edu">mmaldo@ucdavis.edu</a></p>
+            </div>
+        </div>
+        <p style="text-align: center;">Please contact the organizers directly with any questions or requests for additional information.</p>
     </section>
 
     <footer>
