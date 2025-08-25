@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Western Photosynthesis Conference 2026</title>
 
+    <link rel="icon" type="image/png" href="images/wpc-favicon.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
@@ -117,7 +119,7 @@
         .image-section {
             flex: 3;
             text-align: center;
-            height: 450px;       /* desired height */
+            height: 450px;       /* i've been adjusting based on the length of the text */
         }
         .image-section img {
             width: 100%;
@@ -149,6 +151,48 @@
             margin: 0.25rem 0;
         }
 
+        .important-dates {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .date-box {
+            flex: 1 1 250px;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .date-box h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: #007acc;
+        }
+
+        .date-box p {
+            margin: 0;
+            font-size: 1rem;
+            color: #35383D;
+        }
+
+        .date-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
+        @media (max-width: 768px) {
+            .important-dates {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+        }
 
         footer {
             margin-top: 4rem;
@@ -175,7 +219,7 @@
         }
 
         .email:hover {
-            text-decoration: underline; /* optional: underline on hover */
+            text-decoration: underline; /* underlines when hovered on */
         }
 
     </style>
@@ -202,24 +246,29 @@
     <section class="main-content">
         <div class="text-image-container">
             <div class="text-section">
-                <p>The Western Photosynthesis Conference (WPC) is pleased to announce its 35th annual meeting, bringing together
-                    researchers from diverse disciplines to advance our understanding of photosynthetic processes. As one of three
-                    regional photosynthesis conferences in the United States, the WPC provides a unique platform for scientists to share
-                    knowledge, collaborate, and foster professional growth, particularly for early-career scholars.</p>
+                <p>The Western Photosynthesis Conference (WPC) is pleased to announce its 35th annual meeting, bringing together researchers from diverse disciplines to advance our understanding of photosynthetic processes. As one of three regional photosynthesis conferences in the United States, the WPC provides a unique platform for scientists to share knowledge, collaborate, and foster professional growth, particularly for early-career scholars.</p>
+        
+                <p class="spaced">This year's conference, themed <strong style="color: #007acc;">"Harnessing the Power of Photosynthesis: From Fundamentals to Applications,"</strong> will explore cutting-edge research in areas such as mechanisms of light stress adaptation, structural dynamics and functional implications, advances in cellular and molecular mechanisms, and innovations in photosynthetic technology and applications. Additionally, topics will include integrative approaches at the ecosystem and global levels, insights into evolution and diversity, carbon metabolism and photorespiration, and photosynthetic electron transport pathways. </p>
                 
-                <p class="spaced">This year's conference, themed <strong style="color: #007acc;">"Harnessing the Power of Photosynthesis: From Fundamentals to
-                        Applications,"</strong> will explore cutting-edge research in areas such as mechanisms of light stress
-                    adaptation, structural dynamics and functional implications, advances in cellular and molecular mechanisms, and
-                    innovations in photosynthetic technology and applications. Additionally, topics will include integrative approaches
-                    at the ecosystem and global levels, insights into evolution and diversity, carbon metabolism and photorespiration,
-                    and photosynthetic electron transport pathways. </p>
-                    <p>The conference will be held at <a style="color: #00996e;" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, located
-                    in Los Gatos, CA, just a 25-minute drive from the San Jose Airport. By bringing together researchers from across the
-                    Western United States and beyond, the WPC aims to foster meaningful scientific discussion and inspire innovative
-                    research within the diverse field of photosynthesis. </p>
+                <p>The conference will be held at <a style="color: #00996e;" href="https://westernphotosynthesis.github.io/conference-2026/venue.html">Green Mountain Retreat</a>, located in Los Gatos, CA, just a 25-minute drive from the San Jose Airport. By bringing together researchers from across the Western United States and beyond, the WPC aims to foster meaningful scientific discussion and inspire innovative research within the diverse field of photosynthesis. </p>
             </div>
             <div class="image-section">
-                <img src="images/homepage-nature.jpg" alt="Conference image">
+                <img src="images/gmr-1.jpg" alt="Conference image">
+            </div>
+        </div>
+
+        <div class="important-dates">
+            <div class="date-box">
+                <h3>Early Registration Deadline</h3>
+                <p>October 2025</p>
+            </div>
+            <div class="date-box">
+                <h3>Registration Deadline</h3>
+                <p>November 2025</p>
+            </div>
+            <div class="date-box">
+                <h3>Abstract Submission Deadline</h3>
+                <p>TBD</p>
             </div>
         </div>
         

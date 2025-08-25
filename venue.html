@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Venue - Western Photosynthesis Conference 2026</title>
 
+    <link rel="icon" type="image/png" href="images/wpc-favicon.png">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -90,12 +92,118 @@
             margin: 0;
             color: rgba(255, 255, 255, 0.7);
         }
+
+        .main-content {
+            margin-top: 0.5rem;
+            margin-right: 5rem;
+            margin-bottom: 0.5rem;
+            margin-left: 5rem;
+            padding: 0.5rem;
+        }
+
+        .main-content h1,
+        .main-content h2 {
+            text-align: center;
+            margin-top: 1;
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+
+        .venue-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .venue-text {
+            flex: 1 1 50%; /* text takes ~50% of width, shrinks if needed */
+            min-width: 280px; /* prevents text from getting too narrow */
+        }
+
+        .venue-carousel {
+            flex: 1 1 45%; /* carousel takes ~45% of width */
+            min-width: 280px;
+            position: relative;
+        }
+
+        .carousel {
+            width: 100%; /* fill parent width */
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .venue-flip-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-top: 2rem;
+        }
+
+        .venue-flip-left {
+            flex: 1 1 45%;
+            min-width: 280px;
+        }
+
+        .venue-flip-text {
+            flex: 1 1 50%;
+            min-width: 280px;
+        }
+
+        .map-container iframe {
+            width: 100%; /* make map scale with container */
+            height: 100%;
+            min-height: 300px; /* ensure some height on small screens */
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;          /* fill the container height */
+            flex-shrink: 0;
+            object-fit: cover;     /* maintain aspect ratio, fill container */
+        }
+
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .carousel button.prev {
+            left: 10px;
+        }
+
+        .carousel button.next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .venue-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
     <nav class="nav">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -107,16 +215,84 @@
         </ul>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8-11, 2026 • Los Gatos, CA</p>
     </header>
 
-    <!-- Main content will go here -->
-    <main class="main-content">
-        <h2>Venue and Travel Information</h2>
-    </main>
+<main class="main-content">
+    <h2>Venue and Travel Information</h2>
+    <div class="venue-section">
+        <div class="venue-text">
+            <p>This year's conference will be held at Green Mountain retreat, a venue surrounded by the natural beauty
+                of Los Gatos with easy access to downtown San Jose.</p>
+            <p>To get to the venue from San Jose International Airport (SJC), simply navigate to “Green Mountain
+                Retreat” in Google Maps. If the GPS navigates to a County Park, continue driving up Bear Creek Road for
+                3 minutes to reach the venue entrance. <strong style="color: #007acc;">A van shuttle will be provided
+                for transport between SJC and Green Mountain Retreat. Please contact the organizers if you're
+                interested.</strong></p>
+            <p>Green Mountain Retreat also has a number of on-site activities to enjoy, including bocce ball, archery,
+                giant chess, ping pong, pickleball, badminton, axe throwing, Connect 4, cornhole, and basketball.</p>
+            <p><strong>Note: </strong>The weather during the conference will likely range from 43–58 °F, with a slight
+                chance of rain expected at some point during the weekend. Be sure to bring clothes and shoes fit for the
+                cold!</p>
+        </div>
+
+        <div class="venue-carousel">
+            <div class="carousel">
+                <div class="slides">
+                    <img src="images/gmr-2.jpg" alt="Venue view 1">
+                    <img src="images/gmr-3.jpg" alt="Venue view 2">
+                    <img src="images/gmr-4.JPG" alt="Venue view 3">
+                    <img src="images/gmr-5.JPG" alt="Venue view 4">
+                    <img src="images/gmr-6.JPG" alt="Venue view 5">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flipped section: map left, text right -->
+    <div class="venue-flip-section">
+        <div class="venue-flip-left">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Green+Mountain+Retreat,+Los+Gatos,+CA&output=embed"
+                    loading="lazy" allowfullscreen style="width:100%; height:100%; min-height:300px; border:0;">
+                </iframe>
+            </div>
+        </div>
+    
+        <div class="venue-flip-text">
+            <p>This year's conference will be held at Green Mountain retreat, a venue surrounded by the natural beauty
+                of Los Gatos with easy access to downtown San Jose.</p>
+            <p>To get to the venue from San Jose International Airport (SJC), simply navigate to “Green Mountain
+                Retreat” in Google Maps. If the GPS navigates to a County Park, continue driving up Bear Creek Road for
+                3 minutes to reach the venue entrance. <strong style="color: #007acc;">A van shuttle will be provided
+                    for transport between SJC and Green Mountain Retreat. Please contact the organizers if you're
+                    interested.</strong></p>
+            <p>Green Mountain Retreat also has a number of on-site activities to enjoy, including bocce ball, archery,
+                giant chess, ping pong, pickleball, badminton, axe throwing, Connect 4, cornhole, and basketball.</p>
+        </div>
+    </div>
+
+</main>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    let index = 0;
+
+    document.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % images.length;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + images.length) % images.length;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+    });
+</script>
 
 </body>
 

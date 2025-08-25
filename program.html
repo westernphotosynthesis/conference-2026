@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Program - Western Photosynthesis Conference 2026</title>
 
+    <link rel="icon" type="image/png" href="images/wpc-favicon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -26,21 +27,21 @@
 
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
-            -webkit-mask-image: linear-gradient(
-                to bottom,
-                rgba(0,0,0,1) 70%,   /* fully visible for top 70% */
-                rgba(0,0,0,0) 100%  /* fade out bottom 30% */
-            );
+            -webkit-mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 1) 70%,
+                    /* fully visible for top 70% */
+                    rgba(0, 0, 0, 0) 100%
+                    /* fade out bottom 30% */
+                );
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
-            mask-image: linear-gradient(
-                to bottom,
-                rgba(0,0,0,1) 20%,
-                rgba(0,0,0,0) 100%
-            );
+            mask-image: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 1) 20%,
+                    rgba(0, 0, 0, 0) 100%);
             mask-repeat: no-repeat;
             mask-size: 100% 100%;
-            padding: 2rem 1rem 6rem 1rem; /* extra bottom space for fade */
+            padding: 2rem 1rem 6rem 1rem;
+            /* extra bottom space for fade */
             text-align: center;
             color: white;
         }
@@ -131,19 +132,23 @@
 
         .session-topics {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 cards per row */
             gap: 1rem;
-            max-width: 1000px;
-            margin: 2rem auto;
+            max-width: 1400px;
+            /*change back to 1000 if this looks bad*/
+            margin: 3rem auto;
+            padding: 0 2rem;
         }
 
         .session-card {
             position: relative;
             cursor: pointer;
-            border-radius: 0;
+            border-radius: 16px;
             overflow: hidden;
             transition: transform 0.3s;
-            aspect-ratio: 1 / 1;  /* makes the card a perfect square */
+            aspect-ratio: 1 / 1;
+            /* makes the card a perfect square */
         }
 
         .card-front,
@@ -158,12 +163,13 @@
             justify-content: center;
             text-align: center;
             padding: 1rem;
-            border-radius: 0;       /* changed from 6px to 0 */
+            border-radius: 16px;
             transition: opacity 0.3s, transform 0.3s;
         }
 
         .card-front {
-            background-color: #007acc;
+            background-color: #00996e;
+            ;
             color: #ffffff;
             flex-direction: column;
             font-weight: 700;
@@ -183,7 +189,7 @@
 
         .card-back {
             background-color: #f6f8fa;
-            color: #007acc;
+            color: #00996e;
             opacity: 0;
             transform: scale(0.95);
         }
@@ -200,16 +206,109 @@
             transform: scale(1);
         }
 
+        .program-schedule {
+            max-width: 1400px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .program-schedule details {
+            border-radius: 16px;
+            background: #ffffff;
+            /* fallback solid white */
+            border: 1px solid #e1e4e8;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Apply gradient glass if backdrop-filter is supported */
+        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            .program-schedule details {
+                background: linear-gradient(135deg,
+                        rgba(0, 122, 204, 0.25),
+                        /* translucent blue */
+                        rgba(0, 153, 110, 0.25)
+                        /* translucent green */
+                    );
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(14px) saturate(180%);
+                -webkit-backdrop-filter: blur(14px) saturate(180%);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .program-schedule details[open] {
+                background: linear-gradient(135deg,
+                        rgba(0, 122, 204, 0.35),
+                        rgba(0, 153, 110, 0.35));
+                backdrop-filter: blur(18px) saturate(200%);
+                -webkit-backdrop-filter: blur(18px) saturate(200%);
+                box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        .program-schedule summary {
+            font-weight: 600;
+            font-size: 1.15rem;
+            cursor: pointer;
+            color: #007acc;
+            outline: none;
+            list-style: none;
+        }
+
+        .program-schedule summary::-webkit-details-marker {
+            display: none;
+            /* remove default arrow */
+        }
+
+        .program-schedule summary::after {
+            content: "▼";
+            float: right;
+            font-size: 0.9rem;
+            color: #555;
+            transition: transform 0.3s ease;
+        }
+
+        .program-schedule details[open] summary::after {
+            transform: rotate(-180deg);
+        }
+
+        .program-schedule ul {
+            list-style: none;        /* no bullets */
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .program-schedule li {
+            text-align: left;        /* align everything left */
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            line-height: 1.5;
+        }
+
+        .program-schedule li strong {
+            display: inline-block;   /* keeps the time inline */
+            min-width: 180px;         /* align times neatly in a column */
+            font-weight: 600;
+        }
+
+        .program-schedule li:last-child {
+            border-bottom: none;
+        }
 
         @media (max-width: 992px) {
             .session-topics {
-                grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 per row on medium screens */
             }
         }
 
         @media (max-width: 768px) {
             .session-topics {
-                grid-template-columns: 1fr; /* 1 per row on mobile */
+                grid-template-columns: 1fr;
+                /* 1 per row on mobile */
             }
 
             .session-title {
@@ -223,9 +322,6 @@
         }
     </style>
 </head>
-
-
-
 
 <body>
     <!-- Navbar -->
@@ -241,20 +337,15 @@
     </nav>
 
 
-
-
     <section class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8-11, 2026 • Los Gatos, CA</p>
     </section>
 
 
-
-
     <section class="main-content">
         <h2>Session Topics</h2>
     </section>
-
 
     <section class="session-topics">
         <div class="session-card">
@@ -268,10 +359,9 @@
             </div>
         </div>
 
-
         <div class="session-card">
             <div class="card-front">
-                <i class="fas fa-shapes"></i>
+                <i class="fas fa-microscope"></i>
                 <span>Structural Dynamics</span>
             </div>
             <div class="card-back">
@@ -280,7 +370,6 @@
                 their role in light harvesting and carbon fixation.
             </div>
         </div>
-
 
         <div class="session-card">
             <div class="card-front">
@@ -293,7 +382,6 @@
             </div>
         </div>
 
-
         <div class="session-card">
             <div class="card-front">
                 <i class="fas fa-bolt"></i>
@@ -304,7 +392,6 @@
                 pathways, and inefficiencies under field conditions.
             </div>
         </div>
-
 
         <div class="session-card">
             <div class="card-front">
@@ -328,7 +415,6 @@
             </div>
         </div>
 
-
         <div class="session-card">
             <div class="card-front">
                 <i class="fas fa-leaf"></i>
@@ -339,7 +425,6 @@
                 informing understanding of evolutionary history and photosynthetic efficiencies.
             </div>
         </div>
-
 
         <div class="session-card">
             <div class="card-front">
@@ -356,7 +441,72 @@
 
     <section class="main-content">
         <h2>Program</h2>
-        <p style="text-align: center;">Coming soon!</p>
+
+        <div class="program-schedule">
+            <details>
+                <summary>Day 1 — Thursday, January 8</summary>
+                <ul>
+                    <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:30 PM</strong> Introduction & Welcome</li>
+                    <li><strong>7:40 – 8:00 PM</strong> Keynote Lecture</li>
+                    <li><strong>8:20 – 8:35 PM</strong> Flash Talks: Poster Session A</li>
+                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Day 2 — Friday, January 9</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
+                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
+                    <li><strong>10:25 – 10:40 AM</strong> Coffee Break</li>
+                    <li><strong>10:40 – 11:05 AM</strong> Invited Talk</li>
+                    <li><strong>11:05 – 12:05 PM</strong> Presentations</li>
+                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                    <li><strong>1:30 – 2:40 PM</strong> Presentations</li>
+                    <li><strong>2:40 – 3:00 PM</strong> Coffee Break</li>
+                    <li><strong>3:00 – 4:00 PM</strong> Group Activity</li>
+                    <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:40 – 8:05 PM</strong> Invited Talk</li>
+                    <li><strong>8:05 – 8:45 PM</strong> Presentations</li>
+                    <li><strong>8:45 – 9:00 PM</strong> Flash Talks: Poster Session B</li>
+                    <li><strong>9:00 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Day 3 — Saturday, January 10</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
+                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
+                    <li><strong>10:25 – 10:40 AM</strong> Coffee Break</li>
+                    <li><strong>10:40 – 11:05 AM</strong> Invited Talk</li>
+                    <li><strong>11:05 – 12:05 PM</strong> Presentations</li>
+                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                    <li><strong>1:30 – 4:00 PM</strong> Free Afternoon</li>
+                    <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:40 – 8:20 PM</strong> Keynote Lecture</li>
+                    <li><strong>8:20 – 8:40 PM</strong> Organizing Meeting: WPC 2027</li>
+                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Day 4 — Sunday, January 11</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
+                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
+                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
+                    <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
+                    <li><strong>11:00 – 12:00 PM</strong> Departure</li>
+                </ul>
+            </details>
+        </div>
     </section>
 
 
