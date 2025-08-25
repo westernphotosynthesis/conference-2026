@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Program - Western Photosynthesis Conference 2026</title>
-
     <link rel="icon" type="image/png" href="images/wpc-favicon.png">
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
     <style>
         body {
             margin: 0;
@@ -24,20 +19,16 @@
             color: #24292e;
         }
 
-
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
-            -webkit-mask-image: linear-gradient(to bottom,
-                    rgba(0, 0, 0, 1) 70%,
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%,
                     /* fully visible for top 70% */
                     rgba(0, 0, 0, 0) 100%
                     /* fade out bottom 30% */
                 );
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
-            mask-image: linear-gradient(to bottom,
-                    rgba(0, 0, 0, 1) 20%,
-                    rgba(0, 0, 0, 0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
             mask-repeat: no-repeat;
             mask-size: 100% 100%;
             padding: 2rem 1rem 6rem 1rem;
@@ -53,11 +44,11 @@
             font-weight: 700;
         }
 
-
         .page-header p {
             font-size: 1.25rem;
             margin-top: 0;
-            color: rgba(255, 255, 255, 0.9); /* 90% opacity */
+            color: rgba(255, 255, 255, 0.9);
+            /* 90% opacity */
         }
 
         .main-content {
@@ -68,7 +59,6 @@
             padding: 0.5rem;
         }
 
-
         .main-content h1,
         .main-content h2 {
             text-align: center;
@@ -77,19 +67,16 @@
             font-size: 1.75rem;
         }
 
-
         .main-content p {
             margin: 0.5rem 0 1rem 0;
             font-size: 1rem;
             color: #35383D;
         }
 
-
         .main-content p.spaced {
             margin-top: 2rem;
             /* increases space above this paragraph */
         }
-
 
         .nav ul {
             list-style: none;
@@ -100,11 +87,9 @@
             background: linear-gradient(90deg, #007acc, #00996e);
         }
 
-
         .nav ul li {
             margin: 0 1rem;
         }
-
 
         .nav ul li a {
             color: #fff;
@@ -114,11 +99,9 @@
             display: block;
         }
 
-
         .nav ul li a:hover {
             text-decoration: underline;
         }
-
 
         footer {
             margin-top: 4rem;
@@ -128,26 +111,49 @@
             color: #777;
         }
 
-
-        .session-topics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            /* 4 cards per row */
-            gap: 2rem;
-            max-width: 1200px;
-            /*change back to 1000 if this looks bad*/
+        .session-topics-list {
+            max-width: 1000px;
             margin: 3rem auto;
             padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
 
-        .session-card {
-            position: relative;
-            cursor: pointer;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: transform 0.3s;
-            aspect-ratio: 1 / 1;
-            /* makes the card a perfect square */
+        .topic-row {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .topic-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            color: #007acc;
+            font-size: 1.1rem;
+        }
+
+        .topic-left i {
+            font-size: 1.5rem;
+            color: #00996e;
+        }
+
+        .topic-right {
+            font-size: 1rem;
+            color: #35383D;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .topic-row {
+                grid-template-columns: 1fr;
+            }
+            .topic-left {
+                margin-bottom: 0.25rem;
+            }
         }
 
         .card-front,
@@ -174,17 +180,14 @@
             font-weight: 700;
         }
 
-
         .card-front span {
             font-size: 1.10rem;
         }
-
 
         .card-front i {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
-
 
         .card-back {
             background-color: #f6f8fa;
@@ -193,12 +196,10 @@
             transform: scale(0.95);
         }
 
-
         .session-card:hover .card-front {
             opacity: 0;
             transform: scale(0.95);
         }
-
 
         .session-card:hover .card-back {
             opacity: 1;
@@ -226,8 +227,7 @@
         /* Apply gradient glass if backdrop-filter is supported */
         @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
             .program-schedule details {
-                background: linear-gradient(135deg,
-                        rgba(0, 122, 204, 0.25),
+                background: linear-gradient(135deg, rgba(0, 122, 204, 0.25),
                         /* translucent blue */
                         rgba(0, 153, 110, 0.25)
                         /* translucent green */
@@ -239,9 +239,7 @@
             }
 
             .program-schedule details[open] {
-                background: linear-gradient(135deg,
-                        rgba(0, 122, 204, 0.35),
-                        rgba(0, 153, 110, 0.35));
+                background: linear-gradient(135deg, rgba(0, 122, 204, 0.35), rgba(0, 153, 110, 0.35));
                 backdrop-filter: blur(18px) saturate(200%);
                 -webkit-backdrop-filter: blur(18px) saturate(200%);
                 box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
@@ -275,65 +273,30 @@
         }
 
         .program-schedule ul {
-            list-style: none;        /* no bullets */
+            list-style: none;
+            /* no bullets */
             padding: 0;
             margin: 1rem 0;
         }
 
         .program-schedule li {
-            text-align: left;        /* align everything left */
+            text-align: left;
+            /* align everything left */
             font-size: 1rem;
             margin: 0.5rem 0;
             line-height: 1.5;
         }
 
         .program-schedule li strong {
-            display: inline-block;   /* keeps the time inline */
-            min-width: 180px;         /* align times neatly in a column */
+            display: inline-block;
+            /* keeps the time inline */
+            min-width: 180px;
+            /* align times neatly in a column */
             font-weight: 600;
         }
 
         .program-schedule li:last-child {
             border-bottom: none;
-        }
-
-        .program-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* wider for topics, narrower for schedule */
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .topics-column h2,
-        .schedule-column h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        /* session topics inside left column */
-        .session-topics {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns in left panel */
-            gap: 2rem;
-        }
-
-        /* make it responsive */
-        @media (max-width: 992px) {
-            .program-layout {
-                grid-template-columns: 1fr; /* stack vertically on smaller screens */
-            }
-
-            .session-topics {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .session-topics {
-                grid-template-columns: 1fr; /* stack cards on mobile */
-            }
         }
 
         @media (max-width: 992px) {
@@ -353,7 +316,6 @@
                 text-align: left;
             }
 
-
             .main-content {
                 margin: 0.5rem 1rem;
             }
@@ -361,8 +323,7 @@
     </style>
 </head>
 
-<body>
-    <!-- Navbar -->
+<body> <!-- Navbar -->
     <nav class="nav">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -374,168 +335,156 @@
         </ul>
     </nav>
 
-
     <section class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </section>
 
-<section class="program-layout">
-    <!-- LEFT: Session Topics -->
-    <div class="topics-column">
+    <section class="main-content">
         <h2>Session Topics</h2>
-        <section class="session-topics">
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-sun"></i>
-                    <span>Light Stress Adaptation</span>
-                </div>
-                <div class="card-back">
-                    Photosynthetic organisms balance photoprotection and growth under fluctuating light conditions, with
-                    implications for efficiency and yield.
-                </div>
+    </section>
+    
+    <section class="session-topics-list">
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-sun"></i>
+                <span>Light Stress Adaptation</span>
             </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-shapes"></i>
-                    <span>Structural Dynamics</span>
-                </div>
-                <div class="card-back">
-                    High-resolution structural data informs mechanistic understanding of photosynthetic protein complexes
-                    and
-                    their role in light harvesting and carbon fixation.
-                </div>
+            <div class="topic-right">
+                Photosynthetic organisms balance photoprotection and growth under fluctuating light
+                conditions, with implications for efficiency and yield.
             </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-dna"></i>
-                    <span>Cellular and Molecular Mechanisms</span>
-                </div>
-                <div class="card-back">
-                    Chloroplast regulation, gene expression, and protein synthesis adapt to environmental
-                    conditions, offering insights for enhancing photosynthetic efficiency.
-                </div>
-            </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-bolt"></i>
-                    <span>Electron Transport Pathways</span>
-                </div>
-                <div class="card-back">
-                    Recent advances reveal dynamic responses to abiotic factors, alternative electron
-                    pathways, and inefficiencies under field conditions.
-                </div>
-            </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-lightbulb"></i>
-                    <span>Photosynthetic Technology</span>
-                </div>
-                <div class="card-back">
-                    Novel technologies, artificial systems, and bio-inspired materials aim to enhance
-                    photosynthetic efficiency and applications.
-                </div>
-            </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-globe"></i>
-                    <span>Ecosystem and Global Perspectives</span>
-                </div>
-                <div class="card-back">
-                    Photosynthetic organisms adapt to environmental changes, influencing global carbon
-                    flux and ecosystem relationships.
-                </div>
-            </div>
-        
-            <div class="session-card">
-                <div class="card-front">
-                    <i class="fas fa-leaf"></i>
-                    <span>Evolution and Diversity</span>
-                </div>
-                <div class="card-back">
-                    Genomic and transcriptomic data reveal diverse photosynthetic protein functions,
-                    informing understanding of evolutionary history and photosynthetic efficiencies.
-                </div>
-            </div>
-
-            <div class="session-card">
-                <div class="card-front"> 
-                    <i class="fas fa-tree"></i> 
-                    <span>Carbon Metabolism</span> 
-                </div>
-                <div class="card-back"> Carbon fixation, central carbon metabolism, and photorespiration are key areas for research,
-                    with implications for identifying bottlenecks and enhancing photosynthetic efficiency. 
-                </div>
-            </div>
-        </section>
         </div>
-    </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-shapes"></i>
+                <span>Structural Dynamics</span>
+            </div>
+            <div class="topic-right">
+                High-resolution structural data informs mechanistic understanding of photosynthetic
+                protein complexes and their role in light harvesting and carbon fixation.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-dna"></i>
+                <span>Cellular and Molecular Mechanisms</span>
+            </div>
+            <div class="topic-right">
+                Chloroplast regulation, gene expression, and protein synthesis adapt to environmental
+                conditions, offering insights for enhancing photosynthetic efficiency.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-bolt"></i>
+                <span>Electron Transport Pathways</span>
+            </div>
+            <div class="topic-right">
+                Recent advances reveal dynamic responses to abiotic factors, alternative electron
+                pathways, and inefficiencies under field conditions.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-lightbulb"></i>
+                <span>Photosynthetic Technology</span>
+            </div>
+            <div class="topic-right">
+                Novel technologies, artificial systems, and bio-inspired materials aim to enhance
+                photosynthetic efficiency and applications.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-globe"></i>
+                <span>Ecosystem and Global Perspectives</span>
+            </div>
+            <div class="topic-right">
+                Photosynthetic organisms adapt to environmental changes, influencing global carbon flux
+                and ecosystem relationships.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-leaf"></i>
+                <span>Evolution and Diversity</span>
+            </div>
+            <div class="topic-right">
+                Genomic and transcriptomic data reveal diverse photosynthetic protein functions,
+                informing understanding of evolutionary history and efficiencies.
+            </div>
+        </div>
+    
+        <div class="topic-row">
+            <div class="topic-left">
+                <i class="fas fa-tree"></i>
+                <span>Carbon Metabolism</span>
+            </div>
+            <div class="topic-right">
+                Carbon fixation, central carbon metabolism, and photorespiration are key areas for
+                research, with implications for identifying bottlenecks and enhancing photosynthetic
+                efficiency.
+            </div>
+        </div>
+    </section>
 
-    <!-- RIGHT: Program Schedule -->
-    <div class="schedule-column">
-    <h2>Program</h2>
-    
-    <div class="program-schedule">
-        <details open>
-            <summary>Day 1 — Thursday, January 8</summary>
-            <ul>
-                <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
-                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                <li><strong>7:30 – 8:35 PM</strong> Evening Session</li>
-                <li><strong>8:40 PM</strong> Evening Social Mixer</li>
-            </ul>
-        </details>
-    
-        <details open>
-            <summary>Day 2 — Friday, January 9</summary>
-            <ul>
-                <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
-                <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
-                <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
-                <li><strong>1:30 – 4:00 PM</strong> Afternoon Session</li>
-                <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
-                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                <li><strong>7:40 – 9:00 PM</strong> Evening Session</li>
-                <li><strong>9:00 PM</strong> Evening Social Mixer</li>
-            </ul>
-        </details>
-    
-        <details open>
-            <summary>Day 3 — Saturday, January 10</summary>
-            <ul>
-                <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
-                <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
-                <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
-                <li><strong>1:30 – 4:00 PM</strong> Free Afternoon</li>
-                <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
-                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                <li><strong>7:40 – 8:40 PM</strong> Evening Session</li>
-                <li><strong>8:40 PM</strong> Evening Social Mixer</li>
-            </ul>
-        </details>
-    
-        <details open>
-            <summary>Day 4 — Sunday, January 11</summary>
-            <ul>
-                <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
-                <li><strong>9:00 – 10:25 AM</strong> Morning Session</li>
-                <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
-                <li><strong>11:00 – 12:00 PM</strong> Departure</li>
-            </ul>
-        </details>
-    </div>
-    </div>
-</section>
-
-    <footer>
-        &copy; Western Photosynthesis Conference 2026
-    </footer>
+    <section class="main-content">
+        <h2>Program</h2>
+        <div class="program-schedule">
+            <details>
+                <summary>Day 1 — Thursday, January 8</summary>
+                <ul>
+                    <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:30 – 8:35 PM</strong> Evening Session</li>
+                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Day 2 — Friday, January 9</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                    <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
+                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                    <li><strong>1:30 – 4:00 PM</strong> Afternoon Session</li>
+                    <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:40 – 9:00 PM</strong> Evening Session</li>
+                    <li><strong>9:00 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Day 3 — Saturday, January 10</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                    <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
+                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                    <li><strong>1:30 – 4:00 PM</strong> Free Afternoon</li>
+                    <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
+                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                    <li><strong>7:40 – 8:40 PM</strong> Evening Session</li>
+                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                </ul>
+            </details>
+            <details>
+                <summary>Day 4 — Sunday, January 11</summary>
+                <ul>
+                    <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
+                    <li><strong>9:00 – 10:25 AM</strong> Morning Session</li>
+                    <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
+                    <li><strong>11:00 – 12:00 PM</strong> Departure</li>
+                </ul>
+            </details>
+        </div>
+    </section>
+    <footer> &copy; Western Photosynthesis Conference 2026 </footer>
 </body>
-
 
 </html>
