@@ -57,8 +57,7 @@
         .page-header p {
             font-size: 1.25rem;
             margin-top: 0;
-            color: rgba(255, 255, 255, 0.7);
-            /* white at 70% opacity */
+            color: rgba(255, 255, 255, 0.9); /* 90% opacity */
         }
 
         .main-content {
@@ -81,7 +80,7 @@
 
         .main-content p {
             margin: 0.5rem 0 1rem 0;
-            font-size: 1.08rem;
+            font-size: 1rem;
             color: #35383D;
         }
 
@@ -134,8 +133,8 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             /* 4 cards per row */
-            gap: 1rem;
-            max-width: 1400px;
+            gap: 2rem;
+            max-width: 1200px;
             /*change back to 1000 if this looks bad*/
             margin: 3rem auto;
             padding: 0 2rem;
@@ -168,7 +167,7 @@
         }
 
         .card-front {
-            background-color: #00996e;
+            background-color: #007acc;
             ;
             color: #ffffff;
             flex-direction: column;
@@ -177,7 +176,7 @@
 
 
         .card-front span {
-            font-size: 1.15rem;
+            font-size: 1.10rem;
         }
 
 
@@ -189,7 +188,7 @@
 
         .card-back {
             background-color: #f6f8fa;
-            color: #00996e;
+            color: #007acc;
             opacity: 0;
             transform: scale(0.95);
         }
@@ -298,6 +297,45 @@
             border-bottom: none;
         }
 
+        .program-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* wider for topics, narrower for schedule */
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .topics-column h2,
+        .schedule-column h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        /* session topics inside left column */
+        .session-topics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns in left panel */
+            gap: 2rem;
+        }
+
+        /* make it responsive */
+        @media (max-width: 992px) {
+            .program-layout {
+                grid-template-columns: 1fr; /* stack vertically on smaller screens */
+            }
+
+            .session-topics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .session-topics {
+                grid-template-columns: 1fr; /* stack cards on mobile */
+            }
+        }
+
         @media (max-width: 992px) {
             .session-topics {
                 grid-template-columns: repeat(2, 1fr);
@@ -339,176 +377,160 @@
 
     <section class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
-        <p>January 8-11, 2026 • Los Gatos, CA</p>
+        <p>January 8–11, 2026 • Los Gatos, CA</p>
     </section>
 
-
-    <section class="main-content">
+<section class="program-layout">
+    <!-- LEFT: Session Topics -->
+    <div class="topics-column">
         <h2>Session Topics</h2>
-    </section>
+        <section class="session-topics">
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-sun"></i>
+                    <span>Light Stress Adaptation</span>
+                </div>
+                <div class="card-back">
+                    Photosynthetic organisms balance photoprotection and growth under fluctuating light conditions, with
+                    implications for efficiency and yield.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-shapes"></i>
+                    <span>Structural Dynamics</span>
+                </div>
+                <div class="card-back">
+                    High-resolution structural data informs mechanistic understanding of photosynthetic protein complexes
+                    and
+                    their role in light harvesting and carbon fixation.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-dna"></i>
+                    <span>Cellular and Molecular Mechanisms</span>
+                </div>
+                <div class="card-back">
+                    Chloroplast regulation, gene expression, and protein synthesis adapt to environmental
+                    conditions, offering insights for enhancing photosynthetic efficiency.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-bolt"></i>
+                    <span>Electron Transport Pathways</span>
+                </div>
+                <div class="card-back">
+                    Recent advances reveal dynamic responses to abiotic factors, alternative electron
+                    pathways, and inefficiencies under field conditions.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Photosynthetic Technology</span>
+                </div>
+                <div class="card-back">
+                    Novel technologies, artificial systems, and bio-inspired materials aim to enhance
+                    photosynthetic efficiency and applications.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-globe"></i>
+                    <span>Ecosystem and Global Perspectives</span>
+                </div>
+                <div class="card-back">
+                    Photosynthetic organisms adapt to environmental changes, influencing global carbon
+                    flux and ecosystem relationships.
+                </div>
+            </div>
+        
+            <div class="session-card">
+                <div class="card-front">
+                    <i class="fas fa-leaf"></i>
+                    <span>Evolution and Diversity</span>
+                </div>
+                <div class="card-back">
+                    Genomic and transcriptomic data reveal diverse photosynthetic protein functions,
+                    informing understanding of evolutionary history and photosynthetic efficiencies.
+                </div>
+            </div>
 
-    <section class="session-topics">
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-sun"></i>
-                <span>Light Stress Adaptation</span>
+            <div class="session-card">
+                <div class="card-front"> 
+                    <i class="fas fa-tree"></i> 
+                    <span>Carbon Metabolism</span> 
+                </div>
+                <div class="card-back"> Carbon fixation, central carbon metabolism, and photorespiration are key areas for research,
+                    with implications for identifying bottlenecks and enhancing photosynthetic efficiency. 
+                </div>
             </div>
-            <div class="card-back">
-                Photosynthetic organisms balance photoprotection and growth under fluctuating light conditions, with
-                implications for efficiency and yield.
-            </div>
+        </section>
         </div>
+    </div>
 
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-microscope"></i>
-                <span>Structural Dynamics</span>
-            </div>
-            <div class="card-back">
-                High-resolution structural data informs mechanistic understanding of photosynthetic protein complexes
-                and
-                their role in light harvesting and carbon fixation.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-dna"></i>
-                <span>Cellular and Molecular Mechanisms</span>
-            </div>
-            <div class="card-back">
-                Chloroplast regulation, gene expression, and protein synthesis adapt to environmental
-                conditions, offering insights for enhancing photosynthetic efficiency.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-bolt"></i>
-                <span>Electron Transport Pathways</span>
-            </div>
-            <div class="card-back">
-                Recent advances reveal dynamic responses to abiotic factors, alternative electron
-                pathways, and inefficiencies under field conditions.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-lightbulb"></i>
-                <span>Photosynthetic Technology</span>
-            </div>
-            <div class="card-back">
-                Novel technologies, artificial systems, and bio-inspired materials aim to enhance
-                photosynthetic efficiency and applications.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-globe"></i>
-                <span>Ecosystem and Global Perspectives</span>
-            </div>
-            <div class="card-back">
-                Photosynthetic organisms adapt to environmental changes, influencing global carbon
-                flux and ecosystem relationships.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-leaf"></i>
-                <span>Evolution and Diversity</span>
-            </div>
-            <div class="card-back">
-                Genomic and transcriptomic data reveal diverse photosynthetic protein functions,
-                informing understanding of evolutionary history and photosynthetic efficiencies.
-            </div>
-        </div>
-
-        <div class="session-card">
-            <div class="card-front">
-                <i class="fas fa-tree"></i>
-                <span>Carbon Metabolism</span>
-            </div>
-            <div class="card-back">
-                Carbon fixation, central carbon metabolism, and photorespiration are key areas for
-                research, with implications for identifying bottlenecks and enhancing photosynthetic efficiency.
-            </div>
-        </div>
-    </section>
-
-
-    <section class="main-content">
-        <h2>Program</h2>
-
-        <div class="program-schedule">
-            <details>
-                <summary>Day 1 — Thursday, January 8</summary>
-                <ul>
-                    <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
-                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                    <li><strong>7:30 PM</strong> Introduction & Welcome</li>
-                    <li><strong>7:40 – 8:00 PM</strong> Keynote Lecture</li>
-                    <li><strong>8:20 – 8:35 PM</strong> Flash Talks: Poster Session A</li>
-                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Day 2 — Friday, January 9</summary>
-                <ul>
-                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
-                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
-                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
-                    <li><strong>10:25 – 10:40 AM</strong> Coffee Break</li>
-                    <li><strong>10:40 – 11:05 AM</strong> Invited Talk</li>
-                    <li><strong>11:05 – 12:05 PM</strong> Presentations</li>
-                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
-                    <li><strong>1:30 – 2:40 PM</strong> Presentations</li>
-                    <li><strong>2:40 – 3:00 PM</strong> Coffee Break</li>
-                    <li><strong>3:00 – 4:00 PM</strong> Group Activity</li>
-                    <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
-                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                    <li><strong>7:40 – 8:05 PM</strong> Invited Talk</li>
-                    <li><strong>8:05 – 8:45 PM</strong> Presentations</li>
-                    <li><strong>8:45 – 9:00 PM</strong> Flash Talks: Poster Session B</li>
-                    <li><strong>9:00 PM</strong> Evening Social Mixer</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Day 3 — Saturday, January 10</summary>
-                <ul>
-                    <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
-                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
-                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
-                    <li><strong>10:25 – 10:40 AM</strong> Coffee Break</li>
-                    <li><strong>10:40 – 11:05 AM</strong> Invited Talk</li>
-                    <li><strong>11:05 – 12:05 PM</strong> Presentations</li>
-                    <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
-                    <li><strong>1:30 – 4:00 PM</strong> Free Afternoon</li>
-                    <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
-                    <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
-                    <li><strong>7:40 – 8:20 PM</strong> Keynote Lecture</li>
-                    <li><strong>8:20 – 8:40 PM</strong> Organizing Meeting: WPC 2027</li>
-                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Day 4 — Sunday, January 11</summary>
-                <ul>
-                    <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
-                    <li><strong>9:00 – 9:25 AM</strong> Invited Talk</li>
-                    <li><strong>9:25 – 10:25 AM</strong> Presentations</li>
-                    <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
-                    <li><strong>11:00 – 12:00 PM</strong> Departure</li>
-                </ul>
-            </details>
-        </div>
-    </section>
-
+    <!-- RIGHT: Program Schedule -->
+    <div class="schedule-column">
+    <h2>Program</h2>
+    
+    <div class="program-schedule">
+        <details open>
+            <summary>Day 1 — Thursday, January 8</summary>
+            <ul>
+                <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
+                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                <li><strong>7:30 – 8:35 PM</strong> Evening Session</li>
+                <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+            </ul>
+        </details>
+    
+        <details open>
+            <summary>Day 2 — Friday, January 9</summary>
+            <ul>
+                <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
+                <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                <li><strong>1:30 – 4:00 PM</strong> Afternoon Session</li>
+                <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
+                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                <li><strong>7:40 – 9:00 PM</strong> Evening Session</li>
+                <li><strong>9:00 PM</strong> Evening Social Mixer</li>
+            </ul>
+        </details>
+    
+        <details open>
+            <summary>Day 3 — Saturday, January 10</summary>
+            <ul>
+                <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
+                <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
+                <li><strong>12:10 – 1:30 PM</strong> Lunch</li>
+                <li><strong>1:30 – 4:00 PM</strong> Free Afternoon</li>
+                <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
+                <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
+                <li><strong>7:40 – 8:40 PM</strong> Evening Session</li>
+                <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+            </ul>
+        </details>
+    
+        <details open>
+            <summary>Day 4 — Sunday, January 11</summary>
+            <ul>
+                <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
+                <li><strong>9:00 – 10:25 AM</strong> Morning Session</li>
+                <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
+                <li><strong>11:00 – 12:00 PM</strong> Departure</li>
+            </ul>
+        </details>
+    </div>
+    </div>
+</section>
 
     <footer>
         &copy; Western Photosynthesis Conference 2026
