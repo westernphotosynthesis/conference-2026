@@ -136,22 +136,74 @@
             color: #555;
         }
 
-        /* Responsive */
+        /* Mobile adjustments */
         @media (max-width: 768px) {
-            .main-content {
-                margin: 1rem;
-            }
-
-            .speaker-card {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .speaker-card img {
-                margin-bottom: 1rem;
-            }
+        /* Shrink margins for body text */
+        .main-content {
+            margin: 0.5rem 1rem;
+            padding: 0.5rem;
         }
+
+        /* Scale down header text */
+        .page-header h1 {
+            font-size: 2rem;
+        }
+        .page-header p {
+            font-size: 1rem;
+        }
+
+        /* Hamburger button (only on mobile) */
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            color: #00996e;
+            font-size: 1.75rem;
+            line-height: 1;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Navbar collapses; expands when .show is added to .nav ul */
+        .nav ul {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            margin: 0;
+            max-height: 0;              /* collapsed by default */
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            width: 100%;
+        }
+        .nav ul.show {
+            max-height: 600px;          /* expanded */
+        }
+        .nav ul li {
+            margin: 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav ul li:first-child {
+            border-top: 0;
+        }
+        .nav ul li a {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            display: block;
+        }
+        .main-content {
+            margin: 1rem;
+        }
+
+        .speaker-card {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .speaker-card img {
+            margin-bottom: 1rem;
+        }
+    }
     </style>
 </head>
 
@@ -159,6 +211,7 @@
 
     <!-- Navbar -->
     <nav class="nav">
+        <button class="hamburger" aria-label="Open menu">☰</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="program.html">Program</a></li>
@@ -185,6 +238,7 @@
             <div class="speaker-info">
                 <h3 style="color: #00996e">Alice Barkan (Keynote)</h3>
                 <h4>Professor Emerita, University of Oregon</h4>
+                <p>Shining new light on the control of <i>psbA</i> translation for Photosystem II repair</p>
             </div>
         </div>
 
@@ -252,6 +306,11 @@
     &copy; Western Photosynthesis Conference 2026
 </footer>
 
+<script>
+    const btn = document.querySelector('.hamburger');
+    const menu = document.querySelector('.nav ul');
+    btn.addEventListener('click', () => menu.classList.toggle('show'));
+</script>
 </body>
 
 </html>

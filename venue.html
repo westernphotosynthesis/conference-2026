@@ -111,11 +111,7 @@
 
         a {
             color: #00996e;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline; /* optional hover effect */
+            text-decoration: underline;
         }
 
         .venue-section {
@@ -201,19 +197,71 @@
             right: 10px;
         }
 
+        /* Mobile adjustments */
         @media (max-width: 768px) {
-            .venue-section {
-                flex-direction: column;
-                align-items: center;
-            }
+        /* Shrink margins for body text */
+        .main-content {
+            margin: 0.5rem 1rem;
+            padding: 0.5rem;
         }
 
+        /* Scale down header text */
+        .page-header h1 {
+            font-size: 2rem;
+        }
+        .page-header p {
+            font-size: 1rem;
+        }
+
+        /* Hamburger button (only on mobile) */
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            color: #00996e;
+            font-size: 1.75rem;
+            line-height: 1;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Navbar collapses; expands when .show is added to .nav ul */
+        .nav ul {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            margin: 0;
+            max-height: 0;              /* collapsed by default */
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            width: 100%;
+        }
+        .nav ul.show {
+            max-height: 600px;          /* expanded */
+        }
+        .nav ul li {
+            margin: 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav ul li:first-child {
+            border-top: 0;
+        }
+        .nav ul li a {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            display: block;
+        }
+        .venue-section {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
     </style>
 </head>
 
 <body>
-
     <nav class="nav">
+        <button class="hamburger" aria-label="Open menu">☰</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="program.html">Program</a></li>
@@ -233,7 +281,7 @@
     <h2>Venue and Travel Information</h2>
     <div class="venue-section">
         <div class="venue-text">
-            <p>This year's conference will be held at <a style="color: #00996e;" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, a venue surrounded by the natural beauty
+            <p>This year's conference will be held at <a style="color: #00996e;" target="_blank" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, a venue surrounded by the natural beauty
                 of Los Gatos with easy access to downtown San Jose.</p>
             <p>There are three international airports in the Bay Area that you can plan to fly to or from: San Francisco International Airport (SFO), Oakland International Airport (OAK), and San Jose International Airport (SJC).<strong style="color: #007acc;"> A van shuttle can be provided
                 for transport between SJC/SFO/OAK and Green Mountain Retreat. Please contact the organizers if you're
@@ -271,7 +319,7 @@
         <div class="venue-flip-text">
             <p>Green Mountain Retreat also has a number of on-site activities to enjoy, including bocce ball, archery,
                 giant chess, ping pong, pickleball, badminton, Connect 4, cornhole, and basketball.</p>
-            <p><strong>Note: </strong>The weather during the conference will likely range anywhere from 35–56 °F. Check weather trends and predictions for Los Gatos <a style="color: #00996e;" href="https://www.weathertab.com/en/c/01/united-states/california/los-gatos/">here</a>!</p>
+            <p><strong>Note: </strong>The weather during the conference will likely range anywhere from 35–56 °F. Check weather trends and predictions for Los Gatos <a style="color: #00996e;" target="_blank" href="https://www.weathertab.com/en/c/01/united-states/california/los-gatos/">here</a>!</p>
         </div>
     </div>
 
@@ -293,6 +341,11 @@
     });
 </script>
 
+<script>
+    const btn = document.querySelector('.hamburger');
+    const menu = document.querySelector('.nav ul');
+    btn.addEventListener('click', () => menu.classList.toggle('show'));
+</script>
 </body>
 
 </html>

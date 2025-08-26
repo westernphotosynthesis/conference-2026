@@ -214,133 +214,120 @@
             margin: 2rem auto;
         }
 
-        .program-schedule details {
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 0.75rem 1rem;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        .program-day {
+            border-radius: 16px;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(0, 122, 204, 0.35), rgba(0, 153, 110, 0.35));
+            backdrop-filter: blur(18px) saturate(200%);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .program-schedule summary {
-            font-weight: bold;
-            color: #007acc;
-            cursor: pointer;
-            margin-bottom: 0.5rem;
-        }
 
-        .program-schedule ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0 0;
-        }
-
-        .program-schedule li {
-            margin: 0.25rem 0;
-        }
-
-        .program-schedule li strong {
-            display: inline-block;
-            min-width: 110px; /* invisible divider so descriptions align */
-            color: #333;
-        }
-
-        /* Apply gradient glass if backdrop-filter is supported */
-        @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-            .program-schedule details {
-                background: linear-gradient(135deg, rgba(0, 122, 204, 0.25),
-                        /* translucent blue */
-                        rgba(0, 153, 110, 0.25)
-                        /* translucent green */
-                    );
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                backdrop-filter: blur(14px) saturate(180%);
-                -webkit-backdrop-filter: blur(14px) saturate(180%);
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            .program-schedule details[open] {
-                background: linear-gradient(135deg, rgba(0, 122, 204, 0.35), rgba(0, 153, 110, 0.35));
-                backdrop-filter: blur(18px) saturate(200%);
-                -webkit-backdrop-filter: blur(18px) saturate(200%);
-                box-shadow: 0 6px 28px rgba(0, 0, 0, 0.15);
-            }
-        }
-
-        .program-schedule summary {
+        .program-day h3 {
             font-weight: 600;
             font-size: 1.15rem;
-            cursor: pointer;
             color: #007acc;
-            outline: none;
-            list-style: none;
+            margin: 0 0 0.5rem;
         }
 
-        .program-schedule summary::-webkit-details-marker {
-            display: none;
-            /* remove default arrow */
-        }
-
-        .program-schedule summary::after {
-            content: "▼";
-            float: right;
-            font-size: 0.9rem;
-            color: #555;
-            transition: transform 0.3s ease;
-        }
-
-        .program-schedule details[open] summary::after {
-            transform: rotate(-180deg);
-        }
-
-        .program-schedule ul {
+        .program-day ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
-        .program-schedule li {
+        .program-day li {
             display: grid;
-            grid-template-columns: 140px 1fr; /* left column fixed for times, right column flexible */
+            grid-template-columns: 140px 1fr;
             column-gap: 0.75rem;
             margin: 0.25rem 0;
         }
 
-        .program-schedule li strong {
+        .program-day li strong {
             font-weight: 600;
             color: #333;
         }
 
-        .program-schedule li:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 992px) {
-            .session-topics {
-                grid-template-columns: repeat(2, 1fr);
-                /* 2 per row on medium screens */
-            }
-        }
-
+        /* Mobile adjustments */
         @media (max-width: 768px) {
-            .session-topics {
-                grid-template-columns: 1fr;
-                /* 1 per row on mobile */
-            }
-
-            .session-title {
-                text-align: left;
-            }
-
-            .main-content {
-                margin: 0.5rem 1rem;
-            }
+        /* Shrink margins for body text */
+        .main-content {
+            margin: 0.5rem 1rem;
+            padding: 0.5rem;
         }
+
+        /* Scale down header text */
+        .page-header h1 {
+            font-size: 2rem;
+        }
+        .page-header p {
+            font-size: 1rem;
+        }
+
+        /* Hamburger button (only on mobile) */
+        .hamburger {
+            display: block;
+            cursor: pointer;
+            background: none;
+            border: 0;
+            color: #00996e;
+            font-size: 1.75rem;
+            line-height: 1;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Navbar collapses; expands when .show is added to .nav ul */
+        .nav ul {
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0;
+            margin: 0;
+            max-height: 0;              /* collapsed by default */
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+            width: 100%;
+        }
+        .nav ul.show {
+            max-height: 600px;          /* expanded */
+        }
+        .nav ul li {
+            margin: 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        .nav ul li:first-child {
+            border-top: 0;
+        }
+        .nav ul li a {
+            font-size: 1rem;
+            padding: 0.75rem 1rem;
+            display: block;
+        }
+        .session-topics {
+            grid-template-columns: 1fr;
+            /* 1 per row on mobile */
+        }
+
+        .session-title {
+            text-align: left;
+        }
+
+        .main-content {
+            margin: 0.5rem 1rem;
+        }
+
+        .program-schedule {
+            grid-template-columns: 1fr;
+        }
+    }
+
     </style>
 </head>
 
 <body> <!-- Navbar -->
     <nav class="nav">
+        <button class="hamburger" aria-label="Open menu">☰</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="program.html">Program</a></li>
@@ -454,17 +441,18 @@
     <section class="main-content">
         <h2>Program</h2>
         <div class="program-schedule">
-            <details open>
-                <summary>Day 1 - Thursday, January 8</summary>
+            <div class="program-day">
+                <h3>Day 1 - January 8 (Thu)</h3>
                 <ul>
                     <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
                     <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
                     <li><strong>7:30 – 8:35 PM</strong> Evening Session</li>
-                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                    <li><strong>8:40 PM</strong> Social Mixer</li>
                 </ul>
-            </details>
-            <details open>
-                <summary>Day 2 - Friday, January 9</summary>
+            </div>
+    
+            <div class="program-day">
+                <h3>Day 2 - January 9 (Fri)</h3>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
                     <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
@@ -473,11 +461,12 @@
                     <li><strong>4:00 – 6:00 PM</strong> Poster Session A</li>
                     <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
                     <li><strong>7:40 – 9:00 PM</strong> Evening Session</li>
-                    <li><strong>9:00 PM</strong> Evening Social Mixer</li>
+                    <li><strong>9:00 PM</strong> Social Mixer</li>
                 </ul>
-            </details>
-            <details open>
-                <summary>Day 3 - Saturday, January 10</summary>
+            </div>
+    
+            <div class="program-day">
+                <h3>Day 3 - January 10 (Sat)</h3>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
                     <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
@@ -486,22 +475,29 @@
                     <li><strong>4:00 – 6:00 PM</strong> Poster Session B</li>
                     <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
                     <li><strong>7:40 – 8:40 PM</strong> Evening Session</li>
-                    <li><strong>8:40 PM</strong> Evening Social Mixer</li>
+                    <li><strong>8:40 PM</strong> Social Mixer</li>
                 </ul>
-            </details>
-            <details open>
-                <summary>Day 4 - Sunday, January 11</summary>
+            </div>
+    
+            <div class="program-day">
+                <h3>Day 4 - January 11 (Sun)</h3>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
                     <li><strong>9:00 – 10:25 AM</strong> Morning Session</li>
                     <li><strong>10:25 – 11:40 AM</strong> Awards & Closing</li>
                     <li><strong>11:00 – 12:00 PM</strong> Departure</li>
                 </ul>
-            </details>
+            </div>
         </div>
     </section>
 
     <footer> &copy; Western Photosynthesis Conference 2026 </footer>
+       
+    <script>
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.nav ul');
+        btn.addEventListener('click', () => menu.classList.toggle('show'));
+    </script>
 </body>
 
 </html>
