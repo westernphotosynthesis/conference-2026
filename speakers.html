@@ -162,10 +162,17 @@
             cursor: pointer;
             background: none;
             border: 0;
-            color: #00996e;
+            color: #ffffff;
             font-size: 1.75rem;
             line-height: 1;
             padding: 0.5rem 1rem;
+        }
+
+        .nav {
+            position: sticky;   /* makes it float at top */
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
         }
 
         /* Navbar collapses; expands when .show is added to .nav ul */

@@ -223,10 +223,17 @@
             cursor: pointer;
             background: none;
             border: 0;
-            color: #00996e;
+            color: #ffffff;
             font-size: 1.75rem;
             line-height: 1;
             padding: 0.5rem 1rem;
+        }
+
+        .nav {
+            position: sticky;   /* makes it float at top */
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
         }
 
         /* Navbar collapses; expands when .show is added to .nav ul */
@@ -286,7 +293,7 @@
     <div class="venue-section">
         <div class="venue-text">
             <p>This year's conference will be held at <a style="color: #00996e;" target="_blank" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, a venue surrounded by the natural beauty
-                of Los Gatos with easy access to downtown San Jose.</p>
+                of Los Gatos with easy access to downtown San Jose.</p> 
             <p>There are three international airports in the Bay Area that you can plan to fly to or from: San Francisco International Airport (SFO), Oakland International Airport (OAK), and San Jose International Airport (SJC).<strong style="color: #007acc;"> A van shuttle can be provided
                 for transport between SJC/SFO/OAK and Green Mountain Retreat. Please contact the organizers if you're
                 interested.</strong></p>
