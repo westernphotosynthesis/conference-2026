@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Western Photosynthesis Conference 2026</title>
+    <title>Sponsors - Western Photosynthesis Conference 2026</title>
 
     <link rel="icon" type="image/png" href="images/wpc-new-favicon.png">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -83,9 +83,10 @@
         .page-header p {
             font-size: 1.25rem;
             margin: 0;
-            color: rgba(255, 255, 255, 0.9); /* 90% opacity */
+            color: rgba(255, 255, 255, 0.9);
+            /* 90% opacity */
         }
-        
+
         .main-content {
             margin-top: 0.5rem;
             margin-right: 5rem;
@@ -98,7 +99,7 @@
         .main-content h2 {
             text-align: center;
             margin-top: 1;
-            margin-bottom: 0;
+            margin-bottom: 1;
             font-size: 1.75rem;
         }
 
@@ -114,66 +115,76 @@
 
         /* Mobile adjustments */
         @media (max-width: 768px) {
-        /* Shrink margins for body text */
-        .main-content {
-            margin: 0.5rem 1rem;
-            padding: 0.5rem;
-        }
 
-        /* Scale down header text */
-        .page-header h1 {
-            font-size: 2rem;
-        }
-        .page-header p {
-            font-size: 1rem;
-        }
+            /* Shrink margins for body text */
+            .main-content {
+                margin: 0.5rem 1rem;
+                padding: 0.5rem;
+            }
 
-        /* Hamburger button (only on mobile) */
-        .hamburger {
-            display: block;
-            cursor: pointer;
-            background: none;
-            border: 0;
-            color: #ffffff;
-            font-size: 1.75rem;
-            line-height: 1;
-            padding: 0.5rem 1rem;
-        }
+            /* Scale down header text */
+            .page-header h1 {
+                font-size: 2rem;
+            }
 
-        .nav {
-            position: sticky;   /* makes it float at top */
-            top: 0;
-            z-index: 1000;
-            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
-        }
+            .page-header p {
+                font-size: 1rem;
+            }
 
-        /* Navbar collapses; expands when .show is added to .nav ul */
-        .nav ul {
-            flex-direction: column;
-            align-items: stretch;
-            padding: 0;
-            margin: 0;
-            max-height: 0;              /* collapsed by default */
-            overflow: hidden;
-            transition: max-height 0.35s ease;
-            width: 100%;
+            /* Hamburger button (only on mobile) */
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                background: none;
+                border: 0;
+                color: #ffffff;
+                font-size: 1.75rem;
+                line-height: 1;
+                padding: 0.5rem 1rem;
+            }
+
+            .nav {
+                position: sticky;
+                /* makes it float at top */
+                top: 0;
+                z-index: 1000;
+                background: linear-gradient(90deg, #007acc, #00996e);
+                /* solid background when scrolling */
+            }
+
+            /* Navbar collapses; expands when .show is added to .nav ul */
+            .nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0;
+                margin: 0;
+                max-height: 0;
+                /* collapsed by default */
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+                width: 100%;
+            }
+
+            .nav ul.show {
+                max-height: 600px;
+                /* expanded */
+            }
+
+            .nav ul li {
+                margin: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .nav ul li:first-child {
+                border-top: 0;
+            }
+
+            .nav ul li a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                display: block;
+            }
         }
-        .nav ul.show {
-            max-height: 600px;          /* expanded */
-        }
-        .nav ul li {
-            margin: 0;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-        .nav ul li:first-child {
-            border-top: 0;
-        }
-        .nav ul li a {
-            font-size: 1rem;
-            padding: 0.75rem 1rem;
-            display: block;
-        }
-    }
     </style>
 </head>
 
@@ -193,15 +204,15 @@
         </ul>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </header>
 
-    <!-- Main content will go here -->
     <main class="main-content">
-        <!-- Add page-specific content here -->
+        <h2>Sponsors</h2>
+        <p style="text-align: center;"><strong>Please consider sponsoring the 35th Western Photosynthesis Conference!</strong></p>
+        <p style="text-align: center;">Your financial contribution can help offset conference costs, support travel scholarships for young researchers, and forge connections between industry and academia. Contact the organizers at <a style="color: #00996e;" href="mailto:westernphotosynthesis@gmail.com">westernphotosynthesis@gmail.com</a> for more information.</p>
     </main>
 
     <footer>
