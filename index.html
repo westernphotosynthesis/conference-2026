@@ -216,8 +216,19 @@
             text-decoration: underline; /* underlines when hovered on */
         }
 
+        .date-link {
+            display: block;           /* makes the link cover the whole card */
+            text-decoration: none;    /* removes underline */
+            color: inherit;           /* keeps the text color same as .date-box */
+        }
+
+        .date-link:hover .date-box {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
         a {
-            color: #00996e;
+            color: #007acc;
             text-decoration: underline;
         }
 
@@ -358,28 +369,36 @@
         </div>
 
         <div class="important-dates">
-            <div class="date-box">
-                <h3>Early Registration</h3>
-                <p>Submit by <strong>November 7, 2025</strong></p>
-            </div>
-            <div class="date-box">
-                <h3>Abstract Submission for Talks</h3>
-                <p>Submit by <strong>November 25, 2025</strong></p>
-            </div>
-            <div class="date-box">
-                <h3>General Registration</h3>
-                <p>Submit by <strong>December 19, 2025</strong></p>
-            </div>
-            <div class="date-box">
-                <h3>General Abstract Submission</h3>
-                <p>Submit by <strong>December 19, 2025</strong></p>
-            </div>
+            <a href="registration.html" class="date-link">
+                <div class="date-box">
+                    <h3>Early Registration</h3>
+                    <p>Submit by <strong>November 7, 2025</strong></p>
+                </div>
+            </a>
+            <a href="registration.html" class="date-link">
+                <div class="date-box">
+                    <h3>Abstract Submission for Talks</h3>
+                    <p>Submit by <strong>November 25, 2025</strong></p>
+                </div>
+            </a>
+            <a href="registration.html" class="date-link">
+                <div class="date-box">
+                    <h3>General Registration</h3>
+                    <p>Submit by <strong>December 19, 2025</strong></p>
+                </div>
+            </a>
+            <a href="registration.html" class="date-link">
+                <div class="date-box">
+                    <h3>General Abstract Submission</h3>
+                    <p>Submit by <strong>December 19, 2025</strong></p>
+                </div>
+            </a>
         </div>
         
         <h2>Organizing Committee</h2>
         <div class="organizers">
             <div class="organizer">
-                <h3>Masakazu Iwai</h3>
+                <h3><a href="https://orcid.org/0000-0002-0986-9015" style="text-decoration: none;" style="color: #007acc;">Masakazu Iwai</a></h3>
                 <p>Lawrence Berkeley National Laboratory</p>
             </div>
         
