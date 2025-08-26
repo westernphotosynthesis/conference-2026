@@ -207,21 +207,42 @@
         }
 
         .program-schedule {
-            max-width: 1000px;
-            margin: 2rem auto;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
             gap: 1rem;
+            max-width: 1400px;
+            margin: 2rem auto;
         }
 
         .program-schedule details {
-            border-radius: 16px;
-            background: #ffffff;
-            /* fallback solid white */
-            border: 1px solid #e1e4e8;
-            padding: 1rem 1.25rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .program-schedule summary {
+            font-weight: bold;
+            color: #007acc;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        .program-schedule ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0;
+        }
+
+        .program-schedule li {
+            margin: 0.25rem 0;
+        }
+
+        .program-schedule li strong {
+            display: inline-block;
+            min-width: 110px; /* invisible divider so descriptions align */
+            color: #333;
         }
 
         /* Apply gradient glass if backdrop-filter is supported */
@@ -274,25 +295,20 @@
 
         .program-schedule ul {
             list-style: none;
-            /* no bullets */
             padding: 0;
-            margin: 1rem 0;
+            margin: 0;
         }
 
         .program-schedule li {
-            text-align: left;
-            /* align everything left */
-            font-size: 1rem;
-            margin: 0.5rem 0;
-            line-height: 1.5;
+            display: grid;
+            grid-template-columns: 140px 1fr; /* left column fixed for times, right column flexible */
+            column-gap: 0.75rem;
+            margin: 0.25rem 0;
         }
 
         .program-schedule li strong {
-            display: inline-block;
-            /* keeps the time inline */
-            min-width: 180px;
-            /* align times neatly in a column */
             font-weight: 600;
+            color: #333;
         }
 
         .program-schedule li:last-child {
@@ -438,8 +454,8 @@
     <section class="main-content">
         <h2>Program</h2>
         <div class="program-schedule">
-            <details>
-                <summary>Day 1 — Thursday, January 8</summary>
+            <details open>
+                <summary>Day 1 - Thursday, January 8</summary>
                 <ul>
                     <li><strong>4:00 – 6:00 PM</strong> Registration & Poster Setup</li>
                     <li><strong>6:00 – 7:30 PM</strong> Dinner</li>
@@ -447,8 +463,8 @@
                     <li><strong>8:40 PM</strong> Evening Social Mixer</li>
                 </ul>
             </details>
-            <details>
-                <summary>Day 2 — Friday, January 9</summary>
+            <details open>
+                <summary>Day 2 - Friday, January 9</summary>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
                     <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
@@ -460,8 +476,8 @@
                     <li><strong>9:00 PM</strong> Evening Social Mixer</li>
                 </ul>
             </details>
-            <details>
-                <summary>Day 3 — Saturday, January 10</summary>
+            <details open>
+                <summary>Day 3 - Saturday, January 10</summary>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast</li>
                     <li><strong>9:00 – 12:05 PM</strong> Morning Session</li>
@@ -473,8 +489,8 @@
                     <li><strong>8:40 PM</strong> Evening Social Mixer</li>
                 </ul>
             </details>
-            <details>
-                <summary>Day 4 — Sunday, January 11</summary>
+            <details open>
+                <summary>Day 4 - Sunday, January 11</summary>
                 <ul>
                     <li><strong>7:00 – 9:00 AM</strong> Breakfast & Poster Tear-Down</li>
                     <li><strong>9:00 – 10:25 AM</strong> Morning Session</li>
@@ -484,6 +500,7 @@
             </details>
         </div>
     </section>
+
     <footer> &copy; Western Photosynthesis Conference 2026 </footer>
 </body>
 
