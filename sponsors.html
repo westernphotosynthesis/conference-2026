@@ -114,6 +114,28 @@
             color: #35383D;
         }
 
+        .sponsor-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+            align-items: center;
+            margin: 2rem auto 4rem auto;
+            max-width: 1000px;   
+        }
+
+        .sponsor-logos img {
+            max-height: 100px;    
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(20%);   
+            transition: filter 0.3s ease;
+        }
+
+        .sponsor-logos img:hover {
+            filter: grayscale(0%);   
+        }
+
         .hamburger {
             display: none;
         }
@@ -180,6 +202,10 @@
                 padding: 0.75rem 1rem;
                 display: block;
             }
+
+            .sponsor-logos {
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
@@ -207,6 +233,11 @@
         <h2>Sponsors</h2>
         <p style="text-align: center;"><strong>Please consider sponsoring Western Photosynthesis Conference 2026!</strong></p>
         <p style="text-align: center;">Your financial contribution can help offset conference costs, support travel scholarships for young researchers, and forge connections between industry and academia. Contact the organizers at <a style="color: #00996e;" href="mailto:westernphotosynthesis@gmail.com">westernphotosynthesis@gmail.com</a> for more information.</p>
+
+        <div class="sponsor-logos">
+            <img src="images/biochambers.png" alt="BioChambers">
+            <img src="images/bi-walz.png" alt="BI-WALZ">
+        </div>
     </main>
 
     <footer>
