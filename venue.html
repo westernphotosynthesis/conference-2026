@@ -203,6 +203,26 @@
             right: 10px;
         }
 
+        .venue-gallery {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);  /* 6 per row on desktop */
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .venue-gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .venue-gallery img:hover {
+            transform: scale(1.05);
+        }
+
         .hamburger {
             display: none;
         }
@@ -267,6 +287,15 @@
             flex-direction: column;
             align-items: center;
         }
+
+        .venue-gallery {
+            grid-template-columns: repeat(2, 1fr); /* show 2 per row */
+            gap: 0.75rem; /* tighten spacing a little for mobile */
+        }
+
+        .venue-gallery img {
+            height: 140px; /* shrink height so they fit nicely */
+        }
     }
     </style>
 </head>
@@ -294,7 +323,7 @@
     <h2>Venue and Travel Information</h2>
     <div class="venue-section">
         <div class="venue-text">
-            <p>This year's conference will be held at <a style="color: #00996e;" target="_blank" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, a venue surrounded by the natural beauty
+            <p>This year's conference will be held at <a style="color: #00996e;" target="_blank" href="https://www.greenmountainretreat.com/">Green Mountain Retreat</a>, a venue surrounded by the natural redwood and oak woodlands
                 of Los Gatos with easy access to downtown San Jose.</p> 
             <p>There are three international airports in the Bay Area that you can plan to fly to or from: San Francisco International Airport (SFO), Oakland International Airport (OAK), and San Jose International Airport (SJC).<strong style="color: #007acc;"> A van shuttle can be provided
                 for transport between SJC/SFO/OAK and Green Mountain Retreat. Please contact the organizers if you're
@@ -307,16 +336,37 @@
         <div class="venue-carousel">
             <div class="carousel">
                 <div class="slides">
-                    <img src="images/gmr-2.jpg" alt="Venue view 1">
-                    <img src="images/gmr-3.jpg" alt="Venue view 2">
-                    <img src="images/gmr-4.JPG" alt="Venue view 3">
-                    <img src="images/gmr-5.JPG" alt="Venue view 4">
-                    <img src="images/gmr-6.JPG" alt="Venue view 5">
+                    <img src="images/gmr-2.jpg" alt="Venue view 2">
+                    <img src="images/gmr-3.jpg" alt="Venue view 3">
+                    <img src="images/gmr-4.JPG" alt="Venue view 4">
+                    <img src="images/gmr-5.JPG" alt="Venue view 5">
+                    <img src="images/gmr-6.JPG" alt="Venue view 6">
                 </div>
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
             </div>
         </div>
+    </div>
+
+    <div class="venue-gallery">
+        <a href="https://www.greenmountainretreat.com/retreats" target="_blank">
+            <img src="images/gmr-7.avif" alt="GMR lecture hall">
+        </a>
+        <a href="https://www.greenmountainretreat.com/lodging" target="_blank">
+            <img src="images/gmr-8.jpg" alt="GMR dorm common area">
+        </a>
+        <a href="https://www.greenmountainretreat.com/lodging" target="_blank">
+            <img src="images/gmr-9.avif" alt="GMR dorm">
+        </a>
+        <a href="https://www.greenmountainretreat.com/lodging" target="_blank">
+            <img src="images/gmr-10.jpg" alt="GMR cottage">
+        </a>
+        <a href="https://www.greenmountainretreat.com/food" target="_blank">
+            <img src="images/gmr-11.jpg" alt="GMR food 1">
+        </a>
+        <a href="https://www.greenmountainretreat.com/food" target="_blank">
+            <img src="images/gmr-12.jpg" alt="GMR food 2">
+        </a>
     </div>
 
     <div class="venue-flip-section">
@@ -331,6 +381,8 @@
         <div class="venue-flip-text">
             <p>Green Mountain Retreat also has a number of on-site activities to enjoy, including bocce ball, archery,
                 giant chess, ping pong, pickleball, badminton, Connect 4, cornhole, and basketball.</p>
+                <p>A virtual tour of the venue is available at the bottom of <a style="color: #00996e;" target="_blank"
+                    href="https://www.greenmountainretreat.com/">this page</a> for your reference.</p>
             <p><strong>Note: </strong>The weather during the conference will likely range anywhere from 35–56 °F. Check weather trends and predictions for Los Gatos <a style="color: #00996e;" target="_blank" href="https://www.weathertab.com/en/c/01/united-states/california/los-gatos/">here</a>!</p>
         </div>
     </div>
