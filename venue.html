@@ -8,16 +8,13 @@
 
     <link rel="icon" type="image/png" href="images/wpc-new-favicon.png">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* Base Styles */
         body {
             margin: 0;
             font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -26,7 +23,6 @@
             color: #24292e;
         }
 
-        /* Navbar */
         .nav ul {
             list-style: none;
             padding: 1rem 0 0.5rem 0;
@@ -60,6 +56,17 @@
             color: #777;
         }
 
+        footer .footer-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo img {
+            max-width: 60px;   
+            height: auto;
+            display: block;
+            margin: 0 auto;   
+        }
+
         .main-content h2 {
             text-align: center;
             margin-top: 1;
@@ -67,7 +74,6 @@
             font-size: 1.75rem;
         }
 
-        /* Header */
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
             -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
@@ -90,7 +96,7 @@
         .page-header p {
             font-size: 1.25rem;
             margin: 0;
-            color: rgba(255, 255, 255, 0.9); /* 90% opacity */
+            color: rgba(255, 255, 255, 0.9); 
         }
 
         .main-content {
@@ -122,18 +128,18 @@
         }
 
         .venue-text {
-            flex: 1 1 50%; /* text takes ~50% of width, shrinks if needed */
-            min-width: 280px; /* prevents text from getting too narrow */
+            flex: 1 1 50%; 
+            min-width: 280px; 
         }
 
         .venue-carousel {
-            flex: 1 1 45%; /* carousel takes ~45% of width */
+            flex: 1 1 45%; 
             min-width: 280px;
             position: relative;
         }
 
         .carousel {
-            width: 100%; /* fill parent width */
+            width: 100%; 
             aspect-ratio: 16/9;
             overflow: hidden;
             border-radius: 2px;
@@ -159,9 +165,9 @@
         }
 
         .map-container iframe {
-            width: 100%; /* make map scale with container */
+            width: 100%; 
             height: 100%;
-            min-height: 300px; /* ensure some height on small screens */
+            min-height: 300px; 
         }
 
         .slides {
@@ -172,9 +178,9 @@
 
         .slides img {
             width: 100%;
-            height: 100%;          /* fill the container height */
+            height: 100%;         
             flex-shrink: 0;
-            object-fit: cover;     /* maintain aspect ratio, fill container */
+            object-fit: cover;     
         }
 
         .carousel button {
@@ -201,15 +207,12 @@
             display: none;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
-        /* Shrink margins for body text */
         .main-content {
             margin: 0.5rem 1rem;
             padding: 0.5rem;
         }
 
-        /* Scale down header text */
         .page-header h1 {
             font-size: 2rem;
         }
@@ -217,7 +220,6 @@
             font-size: 1rem;
         }
 
-        /* Hamburger button (only on mobile) */
         .hamburger {
             display: block;
             cursor: pointer;
@@ -230,25 +232,24 @@
         }
 
         .nav {
-            position: sticky;   /* makes it float at top */
+            position: sticky;   
             top: 0;
             z-index: 1000;
-            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
+            background: linear-gradient(90deg, #007acc, #00996e); 
         }
 
-        /* Navbar collapses; expands when .show is added to .nav ul */
         .nav ul {
             flex-direction: column;
             align-items: stretch;
             padding: 0;
             margin: 0;
-            max-height: 0;              /* collapsed by default */
+            max-height: 0;             
             overflow: hidden;
             transition: max-height 0.35s ease;
             width: 100%;
         }
         .nav ul.show {
-            max-height: 600px;          /* expanded */
+            max-height: 600px;         
         }
         .nav ul li {
             margin: 0;
@@ -318,7 +319,6 @@
         </div>
     </div>
 
-    <!-- Flipped section: map left, text right -->
     <div class="venue-flip-section">
         <div class="venue-flip-left">
             <div class="map-container">
@@ -337,31 +337,35 @@
 
 </main>
 
-<footer>
-    &copy; Western Photosynthesis Conference 2026
-</footer>
+    <footer>
+        <div class="footer-logo">
+            <img src="images/wpc-new-favicon.png" alt="WPC Logo">
+        </div>
+        <p>&copy; Western Photosynthesis Conference 2026</p>
+    </footer>
 
-<script>
-    const slides = document.querySelector('.slides');
-    const images = document.querySelectorAll('.slides img');
-    let index = 0;
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        let index = 0;
 
-    document.querySelector('.next').addEventListener('click', () => {
-        index = (index + 1) % images.length;
-        slides.style.transform = `translateX(${-index * 100}%)`;
-    });
+        document.querySelector('.next').addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        });
 
-    document.querySelector('.prev').addEventListener('click', () => {
-        index = (index - 1 + images.length) % images.length;
-        slides.style.transform = `translateX(${-index * 100}%)`;
-    });
-</script>
+        document.querySelector('.prev').addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        });
+    </script>
 
-<script>
-    const btn = document.querySelector('.hamburger');
-    const menu = document.querySelector('.nav ul');
-    btn.addEventListener('click', () => menu.classList.toggle('show'));
-</script>
+    <script>
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.nav ul');
+        btn.addEventListener('click', () => menu.classList.toggle('show'));
+    </script>
+
 </body>
 
 </html>

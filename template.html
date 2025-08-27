@@ -60,6 +60,17 @@
             color: #777;
         }
 
+        footer .footer-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo img {
+            max-width: 60px;   /* small size */
+            height: auto;
+            display: block;
+            margin: 0 auto;    /* centers it */
+        }
+
         /* Header */
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
@@ -198,14 +209,16 @@
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </header>
-
-    <!-- Main content will go here -->
+        <!-- Main content will go here -->
     <main class="main-content">
         <!-- Add page-specific content here -->
     </main>
 
     <footer>
-        &copy; Western Photosynthesis Conference 2026
+        <div class="footer-logo">
+            <img src="images/wpc-new-favicon.png" alt="WPC Logo">
+        </div>
+        <p>&copy; Western Photosynthesis Conference 2026</p>
     </footer>
 
     <script>

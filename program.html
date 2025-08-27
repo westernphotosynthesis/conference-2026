@@ -22,9 +22,7 @@
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
             -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%,
-                    /* fully visible for top 70% */
                     rgba(0, 0, 0, 0) 100%
-                    /* fade out bottom 30% */
                 );
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-size: 100% 100%;
@@ -32,7 +30,6 @@
             mask-repeat: no-repeat;
             mask-size: 100% 100%;
             padding: 2rem 1rem 6rem 1rem;
-            /* extra bottom space for fade */
             text-align: center;
             color: white;
         }
@@ -48,7 +45,6 @@
             font-size: 1.25rem;
             margin-top: 0;
             color: rgba(255, 255, 255, 0.9);
-            /* 90% opacity */
         }
 
         .main-content {
@@ -75,7 +71,6 @@
 
         .main-content p.spaced {
             margin-top: 2rem;
-            /* increases space above this paragraph */
         }
 
         .nav ul {
@@ -109,6 +104,17 @@
             text-align: center;
             font-size: 0.9rem;
             color: #777;
+        }
+
+        footer .footer-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo img {
+            max-width: 60px;   
+            height: auto;
+            display: block;
+            margin: 0 auto;  
         }
 
         .session-topics-list {
@@ -208,7 +214,7 @@
 
         .program-schedule {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             max-width: 1400px;
             margin: 2rem auto;
@@ -217,7 +223,7 @@
         .program-day {
             border-radius: 16px;
             padding: 1rem;
-            background: linear-gradient(135deg, rgba(0, 122, 204, 0.35), rgba(0, 153, 110, 0.35));
+            background: linear-gradient(360deg, rgba(0, 122, 204, 0.35), rgba(0, 153, 110, 0.35));
             backdrop-filter: blur(18px) saturate(200%);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -256,15 +262,12 @@
             display: none;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
-        /* Shrink margins for body text */
         .main-content {
             margin: 0.5rem 1rem;
             padding: 0.5rem;
         }
 
-        /* Scale down header text */
         .page-header h1 {
             font-size: 2rem;
         }
@@ -272,7 +275,6 @@
             font-size: 1rem;
         }
 
-        /* Hamburger button (only on mobile) */
         .hamburger {
             display: block;
             cursor: pointer;
@@ -285,25 +287,24 @@
         }
 
         .nav {
-            position: sticky;   /* makes it float at top */
+            position: sticky;  
             top: 0;
             z-index: 1000;
-            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
+            background: linear-gradient(90deg, #007acc, #00996e); 
         }
 
-        /* Navbar collapses; expands when .show is added to .nav ul */
         .nav ul {
             flex-direction: column;
             align-items: stretch;
             padding: 0;
             margin: 0;
-            max-height: 0;              /* collapsed by default */
+            max-height: 0;              
             overflow: hidden;
             transition: max-height 0.35s ease;
             width: 100%;
         }
         .nav ul.show {
-            max-height: 600px;          /* expanded */
+            max-height: 600px;          
         }
         .nav ul li {
             margin: 0;
@@ -338,7 +339,7 @@
     </style>
 </head>
 
-<body> <!-- Navbar -->
+<body> 
     <nav class="nav">
         <button class="hamburger" aria-label="Open menu">☰</button>
         <ul>
@@ -505,8 +506,13 @@
         </div>
     </section>
 
-    <footer> &copy; Western Photosynthesis Conference 2026 </footer>
-       
+    <footer>
+        <div class="footer-logo">
+            <img src="images/wpc-new-favicon.png" alt="WPC Logo">
+        </div>
+        <p>&copy; Western Photosynthesis Conference 2026</p>
+    </footer>
+
     <script>
         const btn = document.querySelector('.hamburger');
         const menu = document.querySelector('.nav ul');

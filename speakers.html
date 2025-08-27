@@ -8,16 +8,13 @@
 
     <link rel="icon" type="image/png" href="images/wpc-new-favicon.png">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        /* Base Styles */
         body {
             margin: 0;
             font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -26,7 +23,6 @@
             color: #24292e;
         }
 
-        /* Navbar */
         .nav ul {
             list-style: none;
             padding: 1rem 0 0.5rem 0;
@@ -60,7 +56,17 @@
             color: #777;
         }
 
-        /* Header */
+        footer .footer-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo img {
+            max-width: 60px;   
+            height: auto;
+            display: block;
+            margin: 0 auto;   
+        }
+
         .page-header {
             background: linear-gradient(90deg, #007acc, #00996e);
             -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
@@ -83,10 +89,9 @@
         .page-header p {
             font-size: 1.25rem;
             margin: 0;
-            color: rgba(255, 255, 255, 0.9); /* 90% opacity */
+            color: rgba(255, 255, 255, 0.9); 
         }
 
-        /* Main content */
         .main-content {
             margin: 2rem 5rem;
         }
@@ -96,7 +101,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Speakers section */
         .speakers-container {
             max-width: 900px; 
             margin: 0 auto;
@@ -140,15 +144,12 @@
             display: none;
         }
 
-        /* Mobile adjustments */
         @media (max-width: 768px) {
-        /* Shrink margins for body text */
         .main-content {
             margin: 0.5rem 1rem;
             padding: 0.5rem;
         }
 
-        /* Scale down header text */
         .page-header h1 {
             font-size: 2rem;
         }
@@ -156,7 +157,6 @@
             font-size: 1rem;
         }
 
-        /* Hamburger button (only on mobile) */
         .hamburger {
             display: block;
             cursor: pointer;
@@ -169,25 +169,24 @@
         }
 
         .nav {
-            position: sticky;   /* makes it float at top */
+            position: sticky;   
             top: 0;
             z-index: 1000;
-            background: linear-gradient(90deg, #007acc, #00996e); /* solid background when scrolling */
+            background: linear-gradient(90deg, #007acc, #00996e); 
         }
 
-        /* Navbar collapses; expands when .show is added to .nav ul */
         .nav ul {
             flex-direction: column;
             align-items: stretch;
             padding: 0;
             margin: 0;
-            max-height: 0;              /* collapsed by default */
+            max-height: 0;              
             overflow: hidden;
             transition: max-height 0.35s ease;
             width: 100%;
         }
         .nav ul.show {
-            max-height: 600px;          /* expanded */
+            max-height: 600px;          
         }
         .nav ul li {
             margin: 0;
@@ -219,8 +218,6 @@
 </head>
 
 <body>
-
-    <!-- Navbar -->
     <nav class="nav">
         <button class="hamburger" aria-label="Open menu">☰</button>
         <ul>
@@ -234,13 +231,11 @@
         </ul>
     </nav>
 
-    <!-- Page Header -->
     <header class="page-header">
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </header>
 
-<!-- Main Content -->
 <main class="main-content">
     <h2>Invited Speakers</h2>
 
@@ -250,7 +245,7 @@
             <div class="speaker-info">
                 <h3 style="color: #00996e">Alice Barkan (Keynote)</h3> 
                 <h4>Professor Emerita, University of Oregon</h4>
-                <p>"Shining new light on the control of <i>psbA</i> translation for Photosystem II repair"</p>
+                <p>"Shining new light on the control of <i>psbA</i> translation for photosystem II repair"</p>
                 <p><a style="color: #00996e; text-decoration: none;" target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/40828009/">Related article</a></p>
             </div>
         </div>
@@ -277,6 +272,7 @@
                 <h3 style="color: #00996e">Graham R. Fleming (Keynote)</h3>
                 <h4>Distinguished Emeritus Professor of Chemistry, University of California, Berkeley</h4>
                 <h4>Senior Faculty Scientist, Lawrence Berkeley National Laboratory</h4>
+                <p>"Energy flow in photosystem II: From connected boxes to super- and megacomplexes"</p>
                 <p><a style="color: #00996e; text-decoration: none;" target="_blank" href="https://sites.google.com/lbl.gov/fleming-group/home">Fleming Lab Website</a></p>
             </div>
         </div>
@@ -294,6 +290,8 @@
             <div class="speaker-info">
                 <h3 style="color: #00996e">María Maldonado</h3>
                 <h4>Assistant Professor, University of California, Davis</h4>
+                <p>"PSI-FCP supercomplex across red-lineage organisms"</p>
+                <p><a style="color: #00996e; text-decoration: none;" target="_blank" href="https://maldonado.faculty.ucdavis.edu/">Maldonado Lab Website</a></p>
             </div>
         </div>
 
@@ -318,15 +316,19 @@
     </div>
 </main>
 
-<footer>
-    &copy; Western Photosynthesis Conference 2026
-</footer>
+    <footer>
+        <div class="footer-logo">
+            <img src="images/wpc-new-favicon.png" alt="WPC Logo">
+        </div>
+        <p>&copy; Western Photosynthesis Conference 2026</p>
+    </footer>
 
-<script>
-    const btn = document.querySelector('.hamburger');
-    const menu = document.querySelector('.nav ul');
-    btn.addEventListener('click', () => menu.classList.toggle('show'));
-</script>
+    <script>
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.nav ul');
+        btn.addEventListener('click', () => menu.classList.toggle('show'));
+    </script>
+
 </body>
 
 </html>
