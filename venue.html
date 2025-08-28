@@ -129,7 +129,7 @@
 
         .venue-text {
             flex: 1 1 50%; 
-            min-width: 280px; 
+            min-width: 280px;
         }
 
         .venue-carousel {
@@ -205,7 +205,7 @@
 
         .venue-gallery {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);  /* 6 per row on desktop */
+            grid-template-columns: repeat(6, 1fr);  
             gap: 1rem;
             margin: 2rem 0;
         }
@@ -289,12 +289,12 @@
         }
 
         .venue-gallery {
-            grid-template-columns: repeat(2, 1fr); /* show 2 per row */
-            gap: 0.75rem; /* tighten spacing a little for mobile */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 0.75rem;
         }
 
         .venue-gallery img {
-            height: 140px; /* shrink height so they fit nicely */
+            height: 140px;
         }
     }
     </style>
@@ -401,15 +401,22 @@
         const images = document.querySelectorAll('.slides img');
         let index = 0;
 
-        document.querySelector('.next').addEventListener('click', () => {
-            index = (index + 1) % images.length;
+        function showSlide(newIndex) {
+            index = (newIndex + images.length) % images.length;
             slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        document.querySelector('.next').addEventListener('click', () => {
+            showSlide(index + 1);
         });
 
         document.querySelector('.prev').addEventListener('click', () => {
-            index = (index - 1 + images.length) % images.length;
-            slides.style.transform = `translateX(${-index * 100}%)`;
+            showSlide(index - 1);
         });
+
+        setInterval(() => {
+            showSlide(index + 1);
+        }, 4000); //scrolls every 4 sec
     </script>
 
     <script>
