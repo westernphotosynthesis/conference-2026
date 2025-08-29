@@ -114,6 +114,31 @@
             color: #35383D;
         }
 
+        .important-dates {
+            list-style: none;    
+            padding: 0;
+            margin: 1.5rem auto;
+            max-width: 800px;
+        }
+
+        .important-dates li {
+            display: grid;
+            grid-template-columns: 200px auto; 
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .important-dates .date {
+            text-align: right;
+            font-weight: 700;
+            color: #007acc;
+        }
+
+        .important-dates .desc {
+            color: #35383D;
+            margin-left: 2rem;
+        }
+
         .hamburger {
             display: none;
         } 
@@ -202,7 +227,27 @@
         <br>
         <p style="text-align: center;">Registration costs will cover meals and lodging for all attendees.</p> 
         <p style="text-align: center;"><strong style="color: #007acc;">Early registrants will recieve a $50 discount! </strong>Further details on registration rates will be announced shortly.</p>
+
+        <br>
+
+        <h2>Important dates:</h2>
+        <ul class="important-dates">
+            <li>
+                <span class="date">November 7, 2025</span>
+                <span class="desc">Early registration with a discount rate</span>
+            </li>
+            <li>
+                <span class="date">November 25, 2025</span>
+                <span class="desc">Abstract submission to be considered for talk presentation</span>
+            </li>
+            <li>
+                <span class="date">December 19, 2025</span>
+                <span class="desc">General registration and abstract submission for poster presentation</span>
+            </li>
+        </ul>
     </main>
+
+
 
     <footer>
         <div class="footer-logo">
