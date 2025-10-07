@@ -139,6 +139,54 @@
             margin-left: 2rem;
         }
 
+        .program-schedule {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* two columns side-by-side on desktop */
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .program-day {
+            border-radius: 16px;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 2rem; 
+            padding: 1.5rem;
+            background: linear-gradient(360deg, rgba(0, 153, 110, 0.35), rgba(0, 153, 110, 0.35));
+            backdrop-filter: blur(18px) saturate(200%);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .program-day h3 {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #007acc;
+            margin: 0 0 0.5rem;
+            text-align: center;
+        }
+
+        .program-day ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .program-day li {
+            display: grid;
+            column-gap: 0.75rem;
+            margin: 0.25rem 0;
+        }
+
+        .program-day li strong {
+            font-weight: 600;
+            color: #333;
+            text-align: left;
+        }
+
         .hamburger {
             display: none;
         } 
@@ -201,15 +249,18 @@
         }
 
         .important-dates li {
-            grid-template-columns: 1fr;   /* single column */
-            text-align: left;             /* align naturally */
+            grid-template-columns: 1fr;   
+            text-align: left;             
         }
         .important-dates .date {
-            text-align: left;             /* align date left instead of right */
+            text-align: left;             
             margin-bottom: 0.25rem;
         }
         .important-dates .desc {
-            margin-left: 0;               /* remove extra indent */
+            margin-left: 0;               
+        }
+        .program-day {
+            grid-template-columns: 1fr;
         }
     }
     </style>
@@ -238,29 +289,58 @@
         <h2 style="text-align: center;">Registration</h2>
         <br>
         <p style="text-align: center;"><strong style="color: #007acc;">Early registrants will recieve a $50 discount! </strong></p>
-        <p style="text-align: center;">Registration costs will cover meals and lodging for all attendees.</p>
-        <p style="text-align: center;">Further details on registration rates will be announced shortly.</p>
-
+        <p style="text-align: center;">Registration costs will cover meals and lodging for all attendees. Complete the registration form here.</p>
         <br>
 
-        <h2>Important Dates:</h2>
-        <ul class="important-dates">
-            <li>
-                <span class="date">November 7, 2025</span>
-                <span class="desc">Early registration with a discount rate</span>
-            </li>
-            <li>
-                <span class="date">November 25, 2025</span>
-                <span class="desc">Abstract submission to be considered for talk presentation</span>
-            </li>
-            <li>
-                <span class="date">December 19, 2025</span>
-                <span class="desc">General registration and abstract submission for poster presentation</span>
-            </li>
-        </ul>
+    <section class="main-content">
+        <div class="program-schedule">
+            <div class="program-day">
+                <h3>Registration Awards</h3>
+                <p>All postdocs, graduate students, and undergraduate students are eligible to receive registration awards that may cover up to two-thirds of the registration fee. To apply, please send the following materials to <a style="color: #00996e;" href="mailto:westernphotosynthesis@gmail.com">westernphotosynthesis@gmail.com</a> by <strong>November 7th:</strong></p>
+                <br>
+                <ul>
+                    <li>• An abstract of the presentation you intend to submit to the meeting.</li>
+                    <li>• A paragraph explaining how attending the meeting will benefit your career.</li>
+                    <li>• A letter of recommendation from your primary advisor, including a statement on available funds.</li>
+                </ul>
+                <br>
+                <p>If applying for a registration award, <strong>please do not register for the conference until you receive notification of the award decision by November 21st.</strong> If your application is successful, we will provide you with a registration code and instructions on how to proceed with registration.</p>
+            </div>
+    
+            <div class="program-day">
+                <h3>Abstract Submission Guidelines</h3>
+                <p>Please submit a one-page abstract of your presentation in PDF format with the following:</p>
+                <br>
+                <ul>
+                    <li>• Title of your poster/talk</li>
+                    <li>• Author list</li>
+                    <li>• Author affiliations</li>
+                    <li>• 8.5'' x 11'' page dimensions</li>
+                </ul>
+                <br>
+                <p>Please note that the uploaded PDF will be used
+                directly in our program booklet, so accuracy is crucial.</p>
+                <p><strong>Please feel free to be creative with all other aspects of the presentation and formatting of your abstract!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <h2>Important Dates:</h2>
+    <ul class="important-dates">
+        <li>
+            <span class="date">November 7, 2025</span>
+            <span class="desc">Early registration with a discount rate</span>
+        </li>
+        <li>
+            <span class="date">November 25, 2025</span>
+            <span class="desc">Abstract submission to be considered for talk presentation</span>
+        </li>
+        <li>
+            <span class="date">December 19, 2025</span>
+            <span class="desc">General registration and abstract submission for poster presentation</span>
+        </li>
+    </ul>
     </main>
-
-
 
     <footer>
         <div class="footer-logo">
