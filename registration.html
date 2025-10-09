@@ -234,6 +234,65 @@
             margin: 0 auto;
         }
 
+        .fee-table-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .fee-table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            font-size: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .fee-table thead tr {
+            background: linear-gradient(90deg, #007acc, #00996e);
+        }
+
+        .fee-table th {
+            color: #fff;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .fee-table td {
+            padding: 0.85rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .fee-table .category-header {
+            background-color: #e8f6f2;
+            font-weight: 700;
+            color: #007a64;
+            text-align: left;
+        }
+
+        .fee-table .category-header td {
+            border-top: 2px solid #cfe7e3;
+            border-bottom: 2px solid #cfe7e3;
+            padding: 1rem;
+        }
+
+        .fee-table td:nth-child(2) {
+            text-align: left;
+            padding-left: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+        .fee-table th,
+        .fee-table td {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        }
+
         .hamburger {
             display: none;
         } 
@@ -344,7 +403,15 @@
                     <p>Submit by <br> <strong>November 7, 2025</strong></p>
                 </div>
             </a>
+            <a href="#fees" class="date-link">
+                <div class="date-box" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+                    <h3 style="color: #00996e;">View Registration Fees</h3>
+                    <p>See rates for students, postdocs, PIs, and guests</p>
+                </div>
+            </a>
+            </div>
         </div>
+        
 
         <h2 style="text-align: center;">Registration Awards</h2>
         <p>All postdocs, graduate students, and undergraduate students are eligible to receive registration
@@ -353,6 +420,7 @@
         <strong>November 7th.</strong></p>
         <p>If applying for a registration award, <strong>please do not register for the conference until you receive notification of the award decision by November 21st.</strong> If your application is successful, we will provide you with a registration code and instructions on how to proceed with registration.</p>
         <br>
+        
         <h2 style="text-align: center;">Abstract Guidelines</h2>
         <p>Please submit a one-page abstract of your presentation in PDF format (8.5 x 11 in. dimensions) with (1) the title of your poster/talk, (2) a complete author list, and (3) author affiliations. Please note that the uploaded PDF will be used
             directly in our program booklet, so accuracy is crucial.</p>
@@ -360,6 +428,104 @@
                 of your abstract!</strong></p>
         <br>
 
+        <section id="fees">
+        <h2 style="text-align:center;">Registration Fees</h2>
+        <p style="text-align:center;">All registration fees include meals and lodging for the duration of the conference.</p>
+        
+        <div class="fee-table-container">
+            <table class="fee-table">
+                <thead>
+                    <tr>
+                        <th>Attendee</th>
+                        <th></th>
+                        <th>Early Registration<br><span class="deadline">(by Nov 7, 2025)</span></th>
+                        <th>Regular Registration<br><span class="deadline">(after Nov 7, 2025)</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-header">
+                        <td colspan="4">Undergraduate Student</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Shared Dormitory</td>
+                        <td>$410</td>
+                        <td>$460</td>
+                    </tr>
+        
+                    <tr class="category-header">
+                        <td colspan="4">Graduate Student/Research Technician</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Shared Dormitory</td>
+                        <td>$470</td>
+                        <td>$520</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Single Dormitory</td>
+                        <td>$620</td>
+                        <td>$670</td>
+                    </tr>
+        
+                    <tr class="category-header">
+                        <td colspan="4">Postdoc</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Shared Dormitory</td>
+                        <td>$520</td>
+                        <td>$570</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Single Dormitory</td>
+                        <td>$700</td>
+                        <td>$750</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Shared Cottage</td>
+                        <td>$810</td>
+                        <td>$860</td>
+                    </tr>
+        
+                    <tr class="category-header">
+                        <td colspan="4">PI</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Single Dormitory</td>
+                        <td>$850</td>
+                        <td>$900</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Shared Cottage</td>
+                        <td>$980</td>
+                        <td>$1,030</td>
+                    </tr>
+
+                    <tr class="category-header">
+                        <td colspan="4">Guest</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Stay at a Cottage</td>
+                        <td>$185</td>
+                        <td>$235</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Stay at a Cottage + Meals</td>
+                        <td>$400</td>
+                        <td>$450</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </section>
 
     <h2>Important Dates:</h2>
     <ul class="important-dates">
