@@ -257,12 +257,30 @@
             transition: filter 0.3s ease;
         }
 
+        .logo-doe {
+            max-height: 200px !important;
+            max-width: 550px !important;
+        }
+        
         .sponsor-logos div {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 3rem;
+        }
+        
+        .sponsor-row-first {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5rem !important;
+        }
 
+        .sponsor-row-rest {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5rem;
         }
 
         a {
@@ -460,33 +478,40 @@
         <p style="text-align: center;">Your financial contribution can help offset conference costs, support travel scholarships for young researchers, and forge connections between industry and academia. Contact the organizers at <a style="color: #00996e;" href="mailto:westernphotosynthesis@gmail.com">westernphotosynthesis@gmail.com</a> for more information.</p>
 
     <div class="sponsor-logos">
-        <a href="https://bayinstruments.com/pages/walz-photosynthesis" target="_blank">
-            <img src="images/bi-walz.png" alt="BI-WALZ">
-        </a>
-        <a href="https://psi.cz/" target="_blank">
-            <img src="images/PSI.png" alt="PSI">
-        </a>
-        <a href="https://www.avantorsciences.com/us/en/" target="_blank">
-            <img src="images/avantor.jpg" alt="VWR-Avantor">
-        </a>
-        <a href="https://spectrologix.com/" target="_blank">
-            <img src="images/spectrologix.png" alt="SprectroLogiX">
-        </a>
-        <a href="https://www.phytoab.com/" target="_blank">
-            <img src="images/phytoab.png" alt="PhytoAB">
-        </a>
-        <a href="https://www.agrisera.com/" target="_blank">
-            <img src="images/Agrisera.jpg" alt="Agrisera">
-        </a>
-        <a href="https://www.licor.com/" target="_blank">
-            <img src="images/LI-COR.png" alt="LI-COR">
-        </a>
-        <a href="https://www.biochambers.com/" target="_blank">
-            <img src="images/biochambers.png" alt="BioChambers">
-        </a>
-        <a href="https://www.eppendorf.com/us-en/" target="_blank">
-            <img src="images/eppendorf.png" alt="Eppendorf">
-        </a>
+        <div class="sponsor-row-first">
+            <a href="https://www.energy.gov/" target="_blank">
+                <img class="logo-doe" src="images/DOE.png" alt="United States Department of Energy">
+            </a>
+        </div>
+        <div class="sponsor-row-rest">
+            <a href="https://bayinstruments.com/pages/walz-photosynthesis" target="_blank">
+                <img src="images/bi-walz.png" alt="BI-WALZ">
+            </a>
+            <a href="https://psi.cz/" target="_blank">
+                <img src="images/PSI.png" alt="PSI">
+            </a>
+            <a href="https://www.avantorsciences.com/us/en/" target="_blank">
+                <img src="images/avantor.jpg" alt="VWR-Avantor">
+            </a>
+            <a href="https://spectrologix.com/" target="_blank">
+                <img src="images/spectrologix.png" alt="SprectroLogiX">
+            </a>
+            <a href="https://www.phytoab.com/" target="_blank">
+                <img src="images/phytoab.png" alt="PhytoAB">
+            </a>
+            <a href="https://www.agrisera.com/" target="_blank">
+                <img src="images/Agrisera.jpg" alt="Agrisera">
+            </a>
+            <a href="https://www.licor.com/" target="_blank">
+                <img src="images/LI-COR.png" alt="LI-COR">
+            </a>
+            <a href="https://www.biochambers.com/" target="_blank">
+                <img src="images/biochambers.png" alt="BioChambers">
+            </a>
+            <a href="https://www.eppendorf.com/us-en/" target="_blank">
+                <img src="images/eppendorf.png" alt="Eppendorf">
+            </a>
+        </div>
     </div>
 
     </section>
