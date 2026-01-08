@@ -157,6 +157,78 @@
             line-height: 1.5;
         }
 
+        .important-dates {
+            list-style: none;    
+            padding: 0;
+            margin: 1.5rem auto;
+            max-width: 800px;
+        }
+
+        .important-dates li {
+            display: grid;
+            grid-template-columns: 200px auto; 
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .important-dates .date {
+            text-align: right;
+            font-weight: 700;
+            color: #007acc;
+        }
+
+        .important-dates .desc {
+            color: #35383D;
+            margin-left: 2rem;
+        } 
+
+        .date-link {
+            text-decoration: none;
+            display: inline-block;
+            margin: 2rem auto;
+        }
+
+        .date-box {
+            flex: 1 1 250px;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .date-box h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .date-box p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .date-box strong {
+            font-size: 1.1rem;
+        }
+
+        .date-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+
+        .important-dates .date-link {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+            .important-dates .date-box {
+            margin: 0 auto;
+        }
+
         @media (max-width: 768px) {
             .topic-row {
                 grid-template-columns: 1fr;
@@ -337,6 +409,26 @@
         .program-schedule {
             grid-template-columns: 1fr;
         }
+
+        .important-dates li {
+            grid-template-columns: 1fr;   
+            text-align: left;             
+        }
+
+        .important-dates .date {
+            text-align: left;             
+            margin-bottom: 0.25rem;
+        }
+
+        .important-dates .desc {
+            margin-left: 0;               
+        }
+
+        .date-box,
+        .date-box h3,
+        .date-box p {
+            text-align: center !important;
+        }
     }
 
     </style>
@@ -360,6 +452,16 @@
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </section>
+
+    <div class="important-dates">
+        <a href="https://drive.google.com/file/d/1WGoEsAYBy2DPTFEeAZMDN3lv4FpbJa3p/view?usp=drive_link" target="_blank" class="date-link">
+            <div class="date-box">
+                <h3 style="color: #007acc;">Conference Program</h3>
+                <p style="color: #24292e;">View the schedule of events, venue details, and presenter information</p>
+            </div>
+        </a>
+    </div>
+    </div>
 
     <section class="main-content">
         <h2>Session Topics</h2>
@@ -464,7 +566,8 @@
                 <ul>
                     <li><strong>4:00 PM</strong> Registration & Poster Setup</li>
                     <li><strong>6:00 PM</strong> Dinner</li>
-                    <li><strong>7:30 PM</strong> Evening Session</li>
+                    <li><strong>7:40 PM</strong> Introduction & Welcome</li>
+                    <li><strong>7:50 PM</strong> Keynote Lecture</li>
                     <li><strong>8:40 PM</strong> Social Mixer</li>
                 </ul>
             </div>
@@ -473,13 +576,16 @@
                 <h3>January 9 (Fri)</h3>
                 <ul>
                     <li><strong>7:00 AM</strong> Breakfast</li>
-                    <li><strong>9:00 AM</strong> Morning Session</li>
+                    <li><strong>9:00 AM</strong> Session 1</li>
+                    <li><strong>10:40 AM</strong> Session 2</li>
                     <li><strong>12:10 PM</strong> Lunch</li>
-                    <li><strong>1:30 PM</strong> Afternoon Session</li>
-                    <li><strong>4:00 PM</strong> Poster Session A</li>
+                    <li><strong>1:30 PM</strong> Career Guidance Activity</li>
+                    <li><strong>2:40 PM</strong> Session 3</li>
+                    <li><strong>3:40 PM</strong> Poster Flash Talks</li>
+                    <li><strong>4:00 PM</strong> Poster Session</li>
                     <li><strong>6:00 PM</strong> Dinner</li>
-                    <li><strong>7:40 PM</strong> Evening Session</li>
-                    <li><strong>9:00 PM</strong> Social Mixer</li>
+                    <li><strong>7:40 PM</strong> Session 4</li>
+                    <li><strong>8:45 PM</strong> Social Mixer</li>
                 </ul>
             </div>
     
@@ -487,13 +593,15 @@
                 <h3>January 10 (Sat)</h3>
                 <ul>
                     <li><strong>7:00 AM</strong> Breakfast</li>
-                    <li><strong>9:00 AM</strong> Morning Session</li>
+                    <li><strong>9:00 AM</strong> Session 5</li>
+                    <li><strong>10:40 AM</strong> Session 6</li>
                     <li><strong>12:10 PM</strong> Lunch</li>
                     <li><strong>1:30 PM</strong> Free Afternoon</li>
-                    <li><strong>4:00 PM</strong> Poster Session B</li>
+                    <li><strong>4:00 PM</strong> Poster Session</li>
                     <li><strong>6:00 PM</strong> Dinner</li>
-                    <li><strong>7:40 PM</strong> Evening Session</li>
-                    <li><strong>8:40 PM</strong> Social Mixer</li>
+                    <li><strong>7:40 PM</strong> WPC 2027 Discussion</li>
+                    <li><strong>8:00 PM</strong> Session 7</li>
+                    <li><strong>9:00 PM</strong> Social Mixer</li>
                 </ul>
             </div>
     
@@ -501,8 +609,8 @@
                 <h3>January 11 (Sun)</h3>
                 <ul>
                     <li><strong>7:00 AM</strong> Breakfast & Poster Tear-Down</li>
-                    <li><strong>9:00 AM</strong> Morning Session</li>
-                    <li><strong>10:25 AM</strong> Awards & Closing</li>
+                    <li><strong>9:00 AM</strong> Session 8</li>
+                    <li><strong>10:30 AM</strong> Awards & Closing</li>
                     <li><strong>11:00 AM</strong> Departure</li>
                 </ul>
             </div>
