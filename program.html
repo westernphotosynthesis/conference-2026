@@ -333,6 +333,78 @@
             text-align: right;
         }
 
+        .image-section {
+            flex: 3;
+            text-align: center;
+            padding: 0 48px;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 16px;
+            padding: 12px;
+            overflow-x: auto;
+            overflow: hidden;           
+            scroll-behavior: smooth;
+        }
+
+        .carousel img {
+            width: 220px;       
+            height: 150px;      
+            object-fit: cover;  
+            border-radius: 4px;
+            cursor: pointer;
+            flex-shrink: 0;     
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-arrow.left {
+            left: -10px;
+        }
+
+        .carousel-arrow.right {
+            right: -10px;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
         .hamburger {
             display: none;
         }
@@ -435,6 +507,65 @@
             margin-left: 0;               
         }
 
+        .image-section {
+            flex: 3;
+            text-align: center;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .carousel img {
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            scroll-snap-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 6px;
+        }
+
+        .caption {
+            margin-top: 10px;
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 32px;
+            color: #fff;
+            cursor: pointer;
+        }
+
         .date-box,
         .date-box h3,
         .date-box p {
@@ -463,6 +594,34 @@
         <h1>Western Photosynthesis Conference 2026</h1>
         <p>January 8–11, 2026 • Los Gatos, CA</p>
     </section>
+
+    <section class="main-content">
+        <h2>Photo Gallery</h2>
+    </section>
+
+    <div class="image-section">
+        <div class="carousel-wrapper">
+                <button class="carousel-arrow left" aria-label="Previous images">&#10094;</button>
+            <div class="carousel">
+                <img src="images/WPC 2026.png" alt="WPC 2026 attendees standing outside.">
+                <img src="images/conf-01.png" alt="Outdoor view of the conference hall.">
+                <img src="images/conf-02.png" alt="Outdoor view of the conference hall.">
+                <img src="images/conf-03.png" alt="Attendees in the conference hall.">
+                <img src="images/conf-04.png" alt="Attendees interacting with sponsors during the coffee break.">
+                <img src="images/conf-05.png" alt="Attendees interacting with sponsors during the coffee break.">
+                <img src="images/conf-06.png" alt="Hiking trail at the venue.">
+                <img src="images/conf-07.png" alt="Making smores at the evening social mixer.">
+                <img src="images/conf-09.png" alt="The night sky in Los Gatos.">
+            </div>
+                <button class="carousel-arrow right" aria-label="Next images">&#10095;</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="imageModal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="caption" id="modalCaption"></div>
+    </div>
 
     <div class="important-dates">
         <a href="https://drive.google.com/file/d/1uNPTQxUJ4Kw7Hfm2HTz-tpV17JYwBKQJ/view?usp=sharing" target="_blank" class="date-link">
@@ -640,6 +799,54 @@
         const menu = document.querySelector('.nav ul');
         btn.addEventListener('click', () => menu.classList.toggle('show'));
     </script>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const captionText = document.getElementById("modalCaption");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".carousel img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+                captionText.textContent = img.alt;
+            });
+        });
+
+        closeBtn.onclick = () => {
+            modal.style.display = "none";
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
+    <script>
+        const carousel = document.querySelector(".carousel");
+        const leftArrow = document.querySelector(".carousel-arrow.left");
+        const rightArrow = document.querySelector(".carousel-arrow.right");
+
+        const scrollAmount = 240; // image width + gap
+
+        leftArrow.addEventListener("click", () => {
+            carousel.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth"
+            });
+        });
+
+        rightArrow.addEventListener("click", () => {
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        });
+    </script>
+
 </body>
 
 </html>
