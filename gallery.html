@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Western Photosynthesis Conference 2026</title>
+
+    <link rel="icon" type="image/png" href="images/wpc-new-favicon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+            color: #24292e;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 1rem 0 0.5rem 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, #007acc, #00996e);
+        }
+
+        .nav ul li {
+            margin: 0 1rem;
+        }
+
+        .nav ul li a {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        .nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        footer .footer-logo {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-logo img {
+            max-width: 60px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+
+        }
+
+        .page-header {
+            background: linear-gradient(90deg, #007acc, #00996e);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100% 100%;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            padding: 2rem 1rem 6rem 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 3.25rem;
+            margin: 0 0 0.5rem 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.9);
+
+        }
+
+        .main-content {
+            margin-top: 0.5rem;
+            margin-right: 5rem;
+            margin-bottom: 0.5rem;
+            margin-left: 5rem;
+            padding: 0.5rem;
+        }
+
+        .main-content h1,
+        .main-content h2 {
+            text-align: center;
+            margin-top: 1;
+            margin-bottom: 0;
+            font-size: 1.75rem;
+        }
+
+        .main-content p {
+            margin: 0.5rem 0 1rem 0;
+            font-size: 1rem;
+            color: #35383D;
+        }
+
+        .image-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 1rem 0;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 2000;
+        }
+
+        .lightbox.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 0.5rem 1rem;
+                padding: 0.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                background: none;
+                border: 0;
+                color: #ffffff;
+                font-size: 1.75rem;
+                line-height: 1;
+                padding: 0.5rem 1rem;
+            }
+
+            .nav {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: linear-gradient(90deg, #007acc, #00996e);
+            }
+
+            .nav ul {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0;
+                margin: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+                width: 100%;
+            }
+
+            .nav ul.show {
+                max-height: 600px;
+            }
+
+            .nav ul li {
+                margin: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            .nav ul li:first-child {
+                border-top: 0;
+            }
+
+            .nav ul li a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+                display: block;
+            }
+
+            .image-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<div class="lightbox" id="lightbox">
+    <img src="" alt="">
+</div>
+
+<body>
+
+    <nav class="nav">
+        <button class="hamburger" aria-label="Open menu">☰</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="program.html">Program</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="venue.html">Venue</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="conduct.html">Code of Conduct</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Western Photosynthesis Conference 2026</h1>
+        <p>January 8–11, 2026 • Los Gatos, CA</p>
+    </header>
+    <main class="main-content">
+        <h2>Photo Gallery</h2>
+        <div class="image-section">
+            <img src="images/WPC 2026.png" alt="WPC 2026 attendees standing outside.">
+            <img src="images/conf-01.png" alt="Outdoor view of the conference hall.">
+            <img src="images/conf-02.png" alt="Outdoor view of the conference hall.">
+            <img src="images/conf-03.png" alt="Attendees in the conference hall.">
+            <img src="images/conf-04.png" alt="Attendees interacting with sponsors during the coffee break.">
+            <img src="images/conf-05.png" alt="Attendees interacting with sponsors during the coffee break.">
+            <img src="images/conf-06.png" alt="Hiking trail at the venue.">
+            <img src="images/conf-07.png" alt="Making smores at the evening social mixer.">
+            <img src="images/conf-08.png" alt="The night sky in Los Gatos.">
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/wpc-new-favicon.png" alt="WPC Logo">
+        </div>
+        <p>&copy; Western Photosynthesis Conference 2026</p>
+    </footer>
+
+    <script>
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.nav ul');
+        btn.addEventListener('click', () => menu.classList.toggle('show'));
+
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const galleryImages = document.querySelectorAll('.image-section img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('show');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('show');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('show');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
