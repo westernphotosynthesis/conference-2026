@@ -156,6 +156,32 @@
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
         }
 
+        .lightbox-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .lightbox-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-btn.prev {
+            left: 2%;
+        }
+
+        .lightbox-btn.next {
+            right: 2%;
+        }
+
         .hamburger {
             display: none;
         }
@@ -230,7 +256,9 @@
 </head>
 
 <div class="lightbox" id="lightbox">
+    <button class="lightbox-btn prev">&#10094;</button>
     <img src="" alt="">
+    <button class="lightbox-btn next">&#10095;</button>
 </div>
 
 <body>
@@ -283,13 +311,42 @@
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = lightbox.querySelector('img');
         const galleryImages = document.querySelectorAll('.image-section img');
+        const prevBtn = document.querySelector('.lightbox-btn.prev');
+        const nextBtn = document.querySelector('.lightbox-btn.next');
 
-        galleryImages.forEach(img => {
+        let currentIndex = 0;
+
+        function showImage(index) {
+            currentIndex = index;
+            lightboxImg.src = galleryImages[index].src;
+            lightboxImg.alt = galleryImages[index].alt;
+            lightbox.classList.add('show');
+        }
+
+        galleryImages.forEach((img, index) => {
             img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.classList.add('show');
+                showImage(index);
             });
+        });
+
+        function showNext() {
+            let nextIndex = (currentIndex + 1) % galleryImages.length;
+            showImage(nextIndex);
+        }
+
+        function showPrev() {
+            let prevIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            showImage(prevIndex);
+        }
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNext();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrev();
         });
 
         lightbox.addEventListener('click', () => {
@@ -297,8 +354,14 @@
         });
 
         document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('show')) return;
+
             if (e.key === 'Escape') {
                 lightbox.classList.remove('show');
+            } else if (e.key === 'ArrowRight') {
+                showNext();
+            } else if (e.key === 'ArrowLeft') {
+                showPrev();
             }
         });
     </script>
